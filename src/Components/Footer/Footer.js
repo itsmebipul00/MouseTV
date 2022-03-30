@@ -1,6 +1,6 @@
 import { GalaMouse } from '../../assets/logos'
 
-const Footer = () => {
+export const Footer = () => {
 	return (
 		<footer className='mousetv-footer'>
 			<div className='footer-logo'>
@@ -18,5 +18,3 @@ const Footer = () => {
 		</footer>
 	)
 }
-
-export default Footer

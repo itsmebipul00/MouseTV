@@ -36,7 +36,7 @@
 	gap: 1rem;
 	display: flex;
 	align-items: flex-start;
-	padding: 2rem;
+	padding: 0 2rem 2rem 2rem;
 	overflow: auto;
 }
 
@@ -54,8 +54,8 @@
 
 .category-wrapper {
 	background-color: hsl(var(--clr-dark));
-	border-radius: 2rem;
-	padding: 10rem;
+	border-radius: 1rem;
+	padding: 5rem 15rem;
 	cursor: pointer;
 }
 

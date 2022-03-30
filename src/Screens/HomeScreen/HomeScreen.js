@@ -42,7 +42,7 @@ const HomeScreen = () => {
 				</button>
 			</div>
 			<section className='section-categories'>
-				<h2 className='categories-heading uppercase fs-850 text-red letter-spacing-4'>
+				<h2 className='categories-heading uppercase fs-700 text-red '>
 					Categories
 				</h2>
 				<div className='categories'>
@@ -54,7 +54,7 @@ const HomeScreen = () => {
 								key={cat.id}
 								id={cat._id}>
 								<div className={`category ${cat.categoryName}`}></div>
-								<h3 className='fs-850 letter-spacing-2'>
+								<h3 className='fs-600 letter-spacing-2'>
 									{cat.categoryName}
 								</h3>
 							</div>
