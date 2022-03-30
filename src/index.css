@@ -1,13 +1,83 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Component lib */
+@import url('https://nextui.netlify.app/nextui.css');
+
+/* Typography */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap');
+:root {
+	--fs-850: 3rem;
+	--fs-800: 2rem;
+	--fs-700: 1.75rem;
+	--fs-600: 1.5rem;
+	--fs-500: 1.25rem;
+	--fs-400: 1rem;
+	--fs-300: 0.75rem;
+	--fs-200: 0.5rem;
+
+	---clr-white: 0 0% 100%;
+	---clr-white-99: 0 0% 99%;
+	---clr-white-98: 0 0% 98%;
+	---clr-white-97: 0 0% 97%;
+	---clr-white-95: 0 0% 95%;
+	---clr-white-90: 0 0% 90%;
+	---clr-white-80: 0 0% 80%;
+	---clr-white-70: 0 0% 70%;
+	---clr-white-60: 0 0% 60%;
+	---clr-grey: 0 0 50%;
+	---clr-black-60: 0 0 40%;
+	---clr-black-70: 0 0 30%;
+	---clr-black-80: 0 0 20%;
+	---clr-black-90: 0 0 10%;
+	---clr-black: 0 0 0%;
+
+	--ff-serif-syne: 'Syne', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.fs-850 {
+	font-size: var(--fs-850);
+}
+
+.fs-800 {
+	font-size: var(--fs-800);
+}
+
+.fs-700 {
+	font-size: var(--fs-700);
+}
+
+.fs-600 {
+	font-size: var(--fs-600);
+}
+
+/* Box sizing rules */
+html {
+	box-sizing: border-box;
+}
+
+/* Set core root defaults */
+html:focus-within {
+	scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+}
+
+/* Percentage based heights */
+html,
+body {
+	height: 100%;
+}
+
+/* Set core body defaults */
+body {
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background: hsl(var(--clr-dark));
+	color: hsl(var(---clr-white));
+	font-family: var(--ff-serif-syne);
 }

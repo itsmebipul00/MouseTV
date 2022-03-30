@@ -1,0 +1,45 @@
+.action {
+	background: url('https://api.iconify.design/fa:fighter-jet.svg?color=white')
+		no-repeat center center / contain;
+}
+
+.romance {
+	background: url('https://api.iconify.design/bi:arrow-through-heart-fill.svg?color=white')
+		no-repeat center center / contain;
+}
+
+.mystery {
+	background: url('https://api.iconify.design/ic:baseline-question-mark.svg?color=white')
+		no-repeat center center / contain;
+}
+
+.horror {
+	background: url('https://api.iconify.design/ion:logo-freebsd-devil.svg?color=white')
+		no-repeat center center / contain;
+}
+
+.fantasy {
+	background: url('https://api.iconify.design/icons8:fantasy.svg?color=white')
+		no-repeat center center / contain;
+}
+
+.drama {
+	background: url('https://api.iconify.design/mdi:drama-masks.svg?color=white')
+		no-repeat center center / contain;
+}
+
+.comedy {
+	background: url('https://api.iconify.design/fa6-regular:face-laugh-squint.svg?color=white')
+		no-repeat center center / contain;
+}
+
+.children {
+	background: url('https://api.iconify.design/ic:baseline-child-care.svg?color=white')
+		no-repeat center center / contain;
+}
+
+.category {
+	width: 5rem;
+	height: 5rem;
+	margin-bottom: 1rem;
+}

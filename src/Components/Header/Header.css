@@ -1,0 +1,51 @@
+header {
+	background: unset;
+}
+
+.header {
+	padding: 1rem;
+	z-index: 999;
+	display: flex;
+	justify-content: space-between;
+	position: fixed;
+	width: 100%;
+}
+
+.input-search {
+	width: 12rem;
+	margin-right: 1rem;
+	border: 2px solid hsl(var(---clr-white));
+	background-color: hsl(var(---clr-black));
+	padding: 0.5rem;
+	height: 100%;
+}
+
+.search-icon {
+	position: absolute;
+	inset: 1.5rem 4.5rem 0 0;
+	margin: 0 1rem 0 auto;
+}
+
+.homepage .brand-name {
+	color: hsl(var(---clr-black));
+}
+
+.header-side {
+	align-self: flex-start;
+}
+
+@media (min-width: 60em) {
+	.input-search {
+		width: 25rem;
+	}
+}
+
+.logout-wrapper {
+	background-color: hsl(var(---clr-black));
+	align-self: center;
+	padding: 0.5rem;
+}
+
+.input-search-label::placeholder {
+	color: hsl(var(--clr-black));
+}
