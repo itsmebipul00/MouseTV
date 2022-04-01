@@ -8,8 +8,8 @@ export const Header = () => {
 				<GalaMouse
 					width='3rem'
 					height='3rem'
-					fill='black'
-					stroke='black'
+					fill='white'
+					stroke='white'
 				/>
 				<h1 className='brand-name letter-spacing-4 d-inline'>tv</h1>
 			</div>

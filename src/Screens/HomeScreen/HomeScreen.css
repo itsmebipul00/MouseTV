@@ -39,6 +39,11 @@
 	padding: 0 2rem 2rem 2rem;
 	overflow: auto;
 }
+.homepage .category {
+	width: 5rem;
+	height: 5rem;
+	margin-bottom: 1rem;
+}
 
 .categories::-webkit-scrollbar {
 	width: 0;
@@ -55,8 +60,11 @@
 .category-wrapper {
 	background-color: hsl(var(--clr-dark));
 	border-radius: 1rem;
-	padding: 5rem 15rem;
 	cursor: pointer;
+}
+
+.homepage .category-wrapper {
+	padding: 5rem 15rem;
 }
 
 .footer-logo {

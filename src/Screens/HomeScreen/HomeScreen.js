@@ -4,28 +4,35 @@ import { Header } from '../../Components/Header/Header'
 import { Footer } from '../../Components/Footer/Footer'
 import { IcBaselinePlayCircleOutline } from '../../assets/logos'
 
-import { useCategory } from '../../ActionProviders/categoryActions'
-import { useEffect } from 'react'
-
 import { Loader } from '../../Components/Loader/Loader'
 import { Error } from '../../Components/Error/Error'
 
 import '../../assets/logo.css'
+import { Categories } from '../../Components/Categories/Categories'
+import { useVideos } from '../../ActionProviders/VideoActions'
+
+import { useNavigate } from 'react-router-dom'
 
 const HomeScreen = () => {
+	const navigate = useNavigate()
+
 	const {
 		categories,
 		categoriesLoading,
 		categoriesError,
-		fetchCategories,
-	} = useCategory()
+		videos,
+		setFilteredData,
+	} = useVideos()
 
-	console.log(categories, categoriesLoading, categoriesError)
-
-	useEffect(() => {
-		fetchCategories()
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [])
+	const handleFiltersAction = cat => {
+		if (cat === 'all') {
+			setFilteredData(videos)
+		} else {
+			const filteredData = videos.filter(vid => vid.category === cat)
+			setFilteredData(filteredData)
+		}
+		navigate('/videos')
+	}
 
 	return (
 		<div className='homepage'>
@@ -49,15 +56,11 @@ const HomeScreen = () => {
 					{categories &&
 						categories.length > 0 &&
 						categories.map(cat => (
-							<div
-								className='category-wrapper uppercase'
+							<Categories
 								key={cat.id}
-								id={cat._id}>
-								<div className={`category ${cat.categoryName}`}></div>
-								<h3 className='fs-600 letter-spacing-2'>
-									{cat.categoryName}
-								</h3>
-							</div>
+								category={cat}
+								handleFiltersAction={handleFiltersAction}
+							/>
 						))}
 				</div>
 			</section>
