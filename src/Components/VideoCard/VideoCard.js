@@ -17,7 +17,7 @@ export const VideoCard = props => {
 	const { video } = props
 	return (
 		<div className='video'>
-			<Link to={`/video/${video._id}`}>
+			<Link to={`/video/${video._id}`} className='link'>
 				<img
 					src={video.poster}
 					alt={`${video.poster}`}

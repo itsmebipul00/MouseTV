@@ -1,0 +1,65 @@
+.form-login {
+	width: 40%;
+	margin: 0 auto;
+	background: unset;
+}
+
+.btn-signUp {
+	padding: 0.5rem 2rem;
+	background-color: hsl(var(--clr-white));
+	color: hsl(var(--clr-dark));
+}
+
+.already-done {
+	margin-top: 0.5rem;
+}
+@media (max-width: 60em) {
+	.form-login {
+		width: 60%;
+	}
+}
+@media (max-width: 40em) {
+	.form-login {
+		width: 80%;
+	}
+}
+
+i {
+	inset: 20% 0% 0% 90%;
+}
+
+::-ms-reveal {
+	display: none !important;
+}
+
+header {
+	padding: 1rem;
+}
+
+.remember-me {
+	display: inline;
+	width: fit-content;
+}
+
+.form-wrapper {
+	min-width: 100vh;
+	min-width: 80%;
+	padding: 5rem 0;
+}
+
+.forgot-password {
+	width: fit-content;
+	margin-left: auto;
+}
+
+form {
+	height: 70vh;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.link {
+	color: hsl(var(--clr-blue));
+}

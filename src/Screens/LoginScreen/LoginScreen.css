@@ -1,0 +1,76 @@
+.form-login {
+	width: 40%;
+	padding-top: 10rem;
+	/* margin: 10vh auto 0 auto; */
+}
+.already-done {
+	margin-top: 0.5rem;
+}
+@media (max-width: 60em) {
+	.form-login {
+		width: 60%;
+	}
+}
+@media (max-width: 40em) {
+	.form-login {
+		width: 80%;
+	}
+}
+
+i {
+	inset: 20% 0% 0% 90%;
+}
+
+::-ms-reveal {
+	display: none !important;
+}
+
+header {
+	padding: 1rem;
+}
+
+.rememberMe {
+	display: inline;
+	width: fit-content;
+	margin-right: 0.5rem;
+	width: 1rem;
+}
+
+.forgot-password {
+	margin-left: auto;
+}
+
+label {
+	white-space: nowrap;
+}
+
+.btn-signUp {
+	padding: 0.5rem 2rem;
+	background-color: hsl(var(--clr-white));
+	color: hsl(var(--clr-dark));
+}
+
+.fa-eye {
+	color: hsl(var(--clr-dark));
+}
+
+form {
+	min-height: 70vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.btn-handle-guest {
+	background-color: unset;
+	padding: 0;
+	border: 0;
+	text-align: left;
+	margin-top: 1rem;
+	cursor: pointer;
+	color: hsl(var(--clr-blue));
+}
+
+.link {
+	color: hsl(var(--clr-blue));
+}
