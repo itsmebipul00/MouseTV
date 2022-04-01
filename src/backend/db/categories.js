@@ -38,8 +38,4 @@ export const categories = [
 		_id: uuid(),
 		categoryName: 'romance',
 	},
-	{
-		_id: uuid(),
-		categoryName: 'thriller',
-	},
 ]
