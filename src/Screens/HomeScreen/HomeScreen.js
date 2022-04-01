@@ -1,5 +1,7 @@
 import './HomeScreen.css'
 
+import { useEffect } from 'react'
+
 import { Header } from '../../Components/Header/Header'
 import { Footer } from '../../Components/Footer/Footer'
 import { IcBaselinePlayCircleOutline } from '../../assets/logos'
@@ -22,6 +24,8 @@ const HomeScreen = () => {
 		categoriesError,
 		videos,
 		setFilteredData,
+		fetchVideos,
+		fetchCategories,
 	} = useVideos()
 
 	const handleFiltersAction = cat => {
@@ -33,6 +37,12 @@ const HomeScreen = () => {
 		}
 		navigate('/videos')
 	}
+
+	useEffect(() => {
+		fetchVideos()
+		fetchCategories()
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [])
 
 	return (
 		<div className='homepage'>

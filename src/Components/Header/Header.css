@@ -1,5 +1,7 @@
 header {
 	background: unset;
+	background-color: transparent;
+	z-index: 999999;
 }
 
 .header {

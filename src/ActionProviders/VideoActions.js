@@ -1,6 +1,6 @@
 import { VideosContext } from '../contextCreator'
 import { videosReducer } from '../reducers/videosReducer'
-import { useContext, useReducer, useEffect } from 'react'
+import { useContext, useReducer } from 'react'
 import { categoriesReducer } from '../reducers/categoriesReducer'
 import { fVidReducer } from '../reducers/fVidReducer'
 import axios from 'axios'
@@ -80,16 +80,12 @@ const VideosProvider = props => {
 		}
 	}
 
-	useEffect(() => {
-		fetchVideos()
-		fetchCategories()
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [])
-
 	return (
 		<VideosContext.Provider
 			value={{
 				videosError,
+				fetchCategories,
+				fetchVideos,
 				videosLoading,
 				categories,
 				categoriesError,

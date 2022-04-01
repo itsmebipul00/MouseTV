@@ -1,0 +1,32 @@
+.react-player {
+	padding-top: 10vh;
+	margin: 0 auto;
+}
+
+.video-details {
+	min-height: 100vh;
+	max-width: 90%;
+	margin: 1rem auto;
+}
+
+.video-title {
+	text-decoration: none;
+	padding-bottom: 0.5rem;
+}
+
+.videos-sub-deatils {
+	display: flex;
+	justify-content: space-between;
+	padding: 0.5rem 0.5rem 1rem 0.5rem;
+	border-bottom: 1px solid hsl(var(--clr-blue));
+}
+
+.videos-sub-info {
+	display: flex;
+	gap: 1rem;
+}
+
+.video-description {
+	padding-top: 2rem;
+	max-width: 50%;
+}

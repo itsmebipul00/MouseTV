@@ -108,3 +108,44 @@ export function CarbonThumbsDownFilled(props) {
 		</svg>
 	)
 }
+
+export function IcBaselinePlaylistAddCheckCircle(props) {
+	return (
+		<svg width='1em' height='1em' viewBox='0 0 24 24' {...props}>
+			<title>Add to Playlist</title>
+
+			<path
+				fill='currentColor'
+				d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2zM7 7h7v2H7V7zm0 3h7v2H7v-2zm3 5H7v-2h3v2zm4.05 3.36l-2.83-2.83l1.41-1.41l1.41 1.41L17.59 12L19 13.41l-4.95 4.95z'></path>
+		</svg>
+	)
+}
+
+export function WatchLaterIcon(props) {
+	return (
+		<svg
+			id='Layer_1'
+			data-name='Layer 1'
+			xmlns='http://www.w3.org/2000/svg'
+			viewBox='0 0 94.76 122.88'
+			{...props}>
+			<title>watch-later</title>
+			<path
+				class='cls-1'
+				d='M88,67.63c9-5.85,9-12.36,0-17.53L14.83,2.19C7.5-2.42-.19.3,0,9.92l.3,94c.63,10.45,6.59,13.3,15.37,8.47l5.78-3.57a35.59,35.59,0,0,0,2.94,3.32A36.8,36.8,0,0,0,83.65,70.31L88,67.63ZM44.31,84.7a6.54,6.54,0,0,1,.82-.76,5.7,5.7,0,0,1,.65-.44V67.82a3.53,3.53,0,0,1,1-2.5h0a3.55,3.55,0,0,1,6,2.5V83.49a7,7,0,0,1,1.28,1h0a6.61,6.61,0,0,1,1,1.29h9.45a3.51,3.51,0,0,1,2.5,1h0a3.55,3.55,0,0,1,0,5h0a3.52,3.52,0,0,1-2.5,1H55.17a6.86,6.86,0,0,1-2.34,2.33,6.83,6.83,0,0,1-10.33-6,6.86,6.86,0,0,1,1.81-4.55ZM72.25,64.81C57,49.57,31.29,53.88,22.38,73.08a30.88,30.88,0,1,0,55.82-.51,28.53,28.53,0,0,0-6-7.76Z'
+			/>
+		</svg>
+	)
+}
+
+export function IcBaselinePlaylistAdd(props) {
+	return (
+		<svg width='1em' height='1em' viewBox='0 0 24 24' {...props}>
+			<title>Add to Playlist</title>
+
+			<path
+				fill='currentColor'
+				d='M14 10H3v2h11v-2zm0-4H3v2h11V6zm4 8v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM3 16h7v-2H3v2z'></path>
+		</svg>
+	)
+}

@@ -1,10 +1,11 @@
 import './VideoCard.css'
 import {
-	IcBaselinePlayCircle,
-	IcSharpAddCircle,
+	IcBaselinePlaylistAdd,
 	BiHandThumbsUpFill,
 	CarbonThumbsDownFilled,
+	WatchLaterIcon,
 } from '../../assets/logos'
+import { Link } from 'react-router-dom'
 
 export const VideoCard = props => {
 	const iconSize = {
@@ -16,15 +17,17 @@ export const VideoCard = props => {
 	const { video } = props
 	return (
 		<div className='video'>
-			<img
-				src={video.poster}
-				alt={`${video.poster}`}
-				className='video-poster'
-			/>
+			<Link to={`/video/${video._id}`}>
+				<img
+					src={video.poster}
+					alt={`${video.poster}`}
+					className='video-poster'
+				/>
+			</Link>
 			<div className='video-info'>
 				<div className='video-cta-icons'>
-					<IcBaselinePlayCircle {...iconSize} />
-					<IcSharpAddCircle {...iconSize} />
+					<IcBaselinePlaylistAdd {...iconSize} />
+					<WatchLaterIcon {...iconSize} />
 					<BiHandThumbsUpFill {...iconSize} />
 					<CarbonThumbsDownFilled {...iconSize} />
 				</div>

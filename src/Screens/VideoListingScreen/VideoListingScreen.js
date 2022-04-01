@@ -1,3 +1,5 @@
+import { useEffect } from 'react'
+
 import { useVideos } from '../../ActionProviders/VideoActions'
 
 import { Header } from '../../Components/Header/Header'
@@ -21,7 +23,11 @@ export const VideoListingScreen = () => {
 		categoriesError,
 		videosLoading,
 		videosError,
+		fetchVideos,
+		fetchCategories,
 	} = useVideos()
+
+	console.log(videos)
 
 	const handleFiltersAction = cat => {
 		if (cat === 'all') {
@@ -31,6 +37,12 @@ export const VideoListingScreen = () => {
 			setFilteredData(filteredData)
 		}
 	}
+
+	useEffect(() => {
+		fetchVideos()
+		fetchCategories()
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [])
 
 	return (
 		<div className='videoListingScreen'>

@@ -37,3 +37,7 @@
 	background: url('https://api.iconify.design/ic:baseline-child-care.svg?color=white')
 		no-repeat center center / contain;
 }
+
+.cls-1 {
+	fill-rule: evenodd;
+}
