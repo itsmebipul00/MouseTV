@@ -14,13 +14,11 @@ const LoginScreen = () => {
 		password: '',
 	})
 
-	console.log(loginFormData)
 	const location = useLocation()
 
 	const { setAuthLoading, setUserAction, setUserError } = useUser()
 
 	const handleRegisterSubmit = async e => {
-		console.log(e)
 		e.preventDefault()
 		try {
 			setAuthLoading()
@@ -28,13 +26,11 @@ const LoginScreen = () => {
 				email: loginFormData.email,
 				password: loginFormData.password,
 			})
-			console.log(resLogin)
 			const dataLogin = await resLogin.data
 			localStorage.setItem('userToken', dataLogin.encodedToken)
 			setUserAction(dataLogin)
 			navigate(-1)
 		} catch (error) {
-			console.log(error)
 			setUserError(error.message)
 		}
 	}

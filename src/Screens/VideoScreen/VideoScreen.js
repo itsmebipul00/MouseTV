@@ -46,7 +46,6 @@ export const VideoScreen = () => {
 
 			setTimeout(() => setVideo(res.data.video), 1000)
 		} catch (error) {
-			console.log(error)
 			dispatchVideo({
 				type: 'VIDEO_ERROR',
 				payload: error.message,

@@ -27,8 +27,6 @@ export const VideoListingScreen = () => {
 		fetchCategories,
 	} = useVideos()
 
-	console.log(videos)
-
 	const handleFiltersAction = cat => {
 		if (cat === 'all') {
 			setFilteredData(videos)
