@@ -1,5 +1,17 @@
 header {
 	background: unset;
+	background-color: transparent;
+	z-index: 999999;
+}
+
+.brand-name {
+	display: none;
+}
+
+@media (min-width: 40em) {
+	.brand-name {
+		display: inline;
+	}
 }
 
 .header {
@@ -22,7 +34,7 @@ header {
 
 .search-icon {
 	position: absolute;
-	inset: 1.5rem 4.5rem 0 0;
+	inset: 20% 3% 0 0;
 	margin: 0 1rem 0 auto;
 }
 
@@ -48,4 +60,37 @@ header {
 
 .input-search-label::placeholder {
 	color: hsl(var(--clr-black));
+}
+
+.logout-icon,
+.login-icon,
+.login-link {
+	color: hsl(var(---clr-white));
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.logout-button {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.user-icon {
+	color: hsl(var(---clr-white));
+}
+
+.user-icon-link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.user-icon {
+	margin-left: 1rem;
 }

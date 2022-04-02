@@ -8,6 +8,10 @@ import { v4 as uuid } from 'uuid'
 export const categories = [
 	{
 		_id: uuid(),
+		categoryName: 'all',
+	},
+	{
+		_id: uuid(),
 		categoryName: 'children',
 	},
 	{
@@ -30,10 +34,7 @@ export const categories = [
 		_id: uuid(),
 		categoryName: 'horror',
 	},
-	{
-		_id: uuid(),
-		categoryName: 'mystery',
-	},
+
 	{
 		_id: uuid(),
 		categoryName: 'romance',

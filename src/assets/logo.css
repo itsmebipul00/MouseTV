@@ -38,8 +38,6 @@
 		no-repeat center center / contain;
 }
 
-.category {
-	width: 5rem;
-	height: 5rem;
-	margin-bottom: 1rem;
+.cls-1 {
+	fill-rule: evenodd;
 }

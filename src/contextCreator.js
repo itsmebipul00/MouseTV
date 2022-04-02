@@ -1,5 +1,9 @@
 import { createContext } from 'react'
 
-const CategoryContext = createContext()
+const VideosContext = createContext()
 
-export { CategoryContext }
+const FilteredVidContext = createContext()
+
+const UserContext = createContext()
+
+export { VideosContext, FilteredVidContext, UserContext }
