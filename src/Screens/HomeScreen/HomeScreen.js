@@ -1,10 +1,14 @@
 import './HomeScreen.css'
 
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 
 import { Header } from '../../Components/Header/Header'
 import { Footer } from '../../Components/Footer/Footer'
-import { IcBaselinePlayCircleOutline } from '../../assets/logos'
+import {
+	IcBaselinePlayCircleOutline,
+	IcTwotoneArrowCircleLeft,
+	IcTwotoneArrowCircleRight,
+} from '../../assets/logos'
 
 import { Loader } from '../../Components/Loader/Loader'
 import { Error } from '../../Components/Error/Error'
@@ -17,6 +21,12 @@ import { useNavigate } from 'react-router-dom'
 
 const HomeScreen = () => {
 	const navigate = useNavigate()
+
+	const sliderBtn = useRef(null)
+
+	const scroll = scrollOffset => {
+		sliderBtn.current.scrollLeft += scrollOffset
+	}
 
 	const {
 		categories,
@@ -62,17 +72,39 @@ const HomeScreen = () => {
 				<h2 className='categories-heading uppercase fs-700 text-red '>
 					Categories
 				</h2>
-				<div className='categories'>
-					{categories &&
-						categories.length > 0 &&
-						categories.map(cat => (
-							<Categories
-								key={cat.id}
-								category={cat}
-								handleFiltersAction={handleFiltersAction}
+				<section className='categories-wrapper p-relative'>
+					<div className='categories ' ref={sliderBtn}>
+						<button
+							onClick={() => scroll(-700)}
+							className='scroll-btn left-scroll-btn'>
+							<IcTwotoneArrowCircleLeft
+								className='left-scroll-icon'
+								width='4rem'
+								height='4rem'
 							/>
-						))}
-				</div>
+						</button>
+
+						{categories &&
+							categories.length > 0 &&
+							categories.map(cat => (
+								<Categories
+									key={cat.id}
+									category={cat}
+									handleFiltersAction={handleFiltersAction}
+								/>
+							))}
+
+						<button
+							onClick={() => scroll(+700)}
+							className='scroll-btn right-scroll-btn'>
+							<IcTwotoneArrowCircleRight
+								className='right-scroll-icon'
+								width='4rem'
+								height='4rem'
+							/>
+						</button>
+					</div>
+				</section>
 			</section>
 			<Footer />
 		</div>

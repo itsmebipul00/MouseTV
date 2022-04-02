@@ -17,9 +17,7 @@ import {
 import './VideoScreen.css'
 
 export const VideoScreen = () => {
-	const params = useParams()
-
-	const { id } = params
+	const { id } = useParams()
 
 	const iconSize = {
 		height: '2rem',
@@ -42,7 +40,7 @@ export const VideoScreen = () => {
 		try {
 			dispatchVideo({ type: 'GET_VIDEO_REQUEST' })
 
-			const res = await axios.get(`/api/video/${params.id}`)
+			const res = await axios.get(`/api/video/${id}`)
 
 			setTimeout(() => setVideo(res.data.video), 1000)
 		} catch (error) {

@@ -1,5 +1,6 @@
 .videoListingScreen .category-wrapper {
 	padding: 6rem 4rem 2rem 4rem;
+	border: 0;
 }
 
 .video-thumbnail {
@@ -11,6 +12,18 @@
 	width: 2rem;
 	height: 2rem;
 	margin-bottom: 0.5rem;
+}
+
+.scroll-btn {
+	cursor: pointer;
+}
+
+.videoListingScreen .left-scroll-btn {
+	inset: 25% 0 0 1%;
+}
+
+.videoListingScreen .right-scroll-btn {
+	inset: 25% 0 0 95vw;
 }
 
 .homepage .category-wrapper {
@@ -30,7 +43,7 @@
 }
 
 .video-poster {
-	min-height: 50vh;
+	aspect-ratio: 1/1.35;
 }
 
 .video-cta-icons {

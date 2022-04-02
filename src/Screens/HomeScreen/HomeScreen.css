@@ -32,12 +32,12 @@
 }
 
 .categories {
-	/* height: 50vh; */
 	gap: 1rem;
 	display: flex;
 	align-items: flex-start;
 	padding: 0 2rem 2rem 2rem;
 	overflow: auto;
+	scroll-behavior: smooth;
 }
 .homepage .category {
 	width: 5rem;
@@ -75,4 +75,39 @@
 
 .footer-copyright {
 	margin-top: 1rem;
+}
+
+.scroll-btn {
+	display: none;
+}
+
+@media (min-width: 60em) {
+	.scroll-btn {
+		display: block;
+	}
+}
+
+.scroll-btn {
+	color: transparent;
+	width: 4rem;
+	height: 4rem;
+	border: 0;
+	background: unset;
+	position: absolute;
+	cursor: pointer;
+}
+
+.left-scroll-btn {
+	inset: 82% 0% 0% 1%;
+}
+
+.right-scroll-btn {
+	inset: 82% 0% 0% 95vw;
+}
+
+.left-scroll-icon,
+.right-scroll-icon {
+	color: hsl(var(--clr-blue));
+	height: 2rem;
+	width: 2rem;
 }

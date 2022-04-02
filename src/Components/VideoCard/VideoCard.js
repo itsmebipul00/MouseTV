@@ -20,7 +20,7 @@ export const VideoCard = props => {
 			<Link to={`/video/${video._id}`} className='link'>
 				<img
 					src={video.poster}
-					alt={`${video.poster}`}
+					alt={`${video.title}`}
 					className='video-poster'
 				/>
 			</Link>

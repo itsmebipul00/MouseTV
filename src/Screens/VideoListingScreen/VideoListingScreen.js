@@ -1,4 +1,9 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
+
+import {
+	IcTwotoneArrowCircleLeft,
+	IcTwotoneArrowCircleRight,
+} from '../../assets/logos.js'
 
 import { useVideos } from '../../ActionProviders/VideoActions'
 
@@ -36,6 +41,12 @@ export const VideoListingScreen = () => {
 		}
 	}
 
+	const sliderBtn = useRef(null)
+
+	const scroll = scrollOffset => {
+		sliderBtn.current.scrollLeft += scrollOffset
+	}
+
 	useEffect(() => {
 		fetchVideos()
 		fetchCategories()
@@ -50,7 +61,17 @@ export const VideoListingScreen = () => {
 
 			<Header />
 
-			<div className='categories'>
+			<div className='categories' ref={sliderBtn}>
+				<button
+					onClick={() => scroll(-700)}
+					className='scroll-btn left-scroll-btn'>
+					<IcTwotoneArrowCircleLeft
+						className='left-scroll-icon'
+						width='4rem'
+						height='4rem'
+					/>
+				</button>
+
 				{categories &&
 					categories.length > 0 &&
 					categories.map(cat => (
@@ -60,6 +81,16 @@ export const VideoListingScreen = () => {
 							handleFiltersAction={handleFiltersAction}
 						/>
 					))}
+
+				<button
+					onClick={() => scroll(+700)}
+					className='scroll-btn right-scroll-btn'>
+					<IcTwotoneArrowCircleRight
+						className='right-scroll-icon'
+						width='4rem'
+						height='4rem'
+					/>
+				</button>
 			</div>
 
 			<div className='videos-listed'>

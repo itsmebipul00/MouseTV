@@ -56,9 +56,7 @@ export const Header = () => {
 					</Link>
 				) : (
 					<>
-						<button
-							onClick={() => logoutUser()}
-							className='logout-button'>
+						<button onClick={logoutUser} className='logout-button'>
 							<UiwLogout
 								className='logout-icon'
 								width='2rem'
