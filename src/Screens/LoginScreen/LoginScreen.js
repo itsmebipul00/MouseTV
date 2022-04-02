@@ -6,6 +6,8 @@ import { useUser } from '../../ActionProviders/AuthActions'
 import { Header } from '../../Components/Header/Header'
 
 import axios from 'axios'
+import { Loader } from '../../Components/Loader/Loader'
+import { Error } from '../../Components/Error/Error'
 
 const LoginScreen = () => {
 	const navigate = useNavigate()
@@ -16,7 +18,13 @@ const LoginScreen = () => {
 
 	const location = useLocation()
 
-	const { setAuthLoading, setUserAction, setUserError } = useUser()
+	const {
+		setAuthLoading,
+		setUserAction,
+		setUserError,
+		authLoading,
+		userAuthError,
+	} = useUser()
 
 	const handleRegisterSubmit = async e => {
 		e.preventDefault()
@@ -28,7 +36,7 @@ const LoginScreen = () => {
 			})
 			const dataLogin = await resLogin.data
 			localStorage.setItem('userToken', dataLogin.encodedToken)
-			setUserAction(dataLogin)
+			setTimeout(() => setUserAction(dataLogin), 1000)
 			navigate(-1)
 		} catch (error) {
 			setUserError(error.message)
@@ -61,6 +69,8 @@ const LoginScreen = () => {
 
 	return (
 		<>
+			{authLoading && <Loader />}
+			{userAuthError && <Error error={userAuthError} />}
 			<Header />
 			<form
 				className='form-login fs-400 letter-spacing-3'

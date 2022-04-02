@@ -6,6 +6,8 @@ import axios from 'axios'
 import { useUser } from '../../ActionProviders/AuthActions'
 
 import { Header } from '../../Components/Header/Header'
+import { Loader } from '../../Components/Loader/Loader'
+import { Error } from '../../Components/Error/Error'
 
 export const RegisterScreen = () => {
 	const location = useLocation()
@@ -21,7 +23,13 @@ export const RegisterScreen = () => {
 
 	const navigate = useNavigate()
 
-	const { setAuthLoading, setUserAction, setUserError } = useUser()
+	const {
+		setAuthLoading,
+		setUserAction,
+		setUserError,
+		authLoading,
+		userAuthError,
+	} = useUser()
 
 	const handleLoginSubmit = async event => {
 		event.preventDefault()
@@ -48,7 +56,7 @@ export const RegisterScreen = () => {
 						})
 						const dataLogin = await resLogin.data
 						localStorage.setItem('userToken', dataLogin.encodedToken)
-						setUserAction(dataLogin)
+						setTimeout(() => setUserAction(dataLogin), 1000)
 						navigate('/videos')
 					} catch (error) {
 						setUserError(error.message)
@@ -84,6 +92,9 @@ export const RegisterScreen = () => {
 
 	return (
 		<>
+			{authLoading && <Loader />}
+
+			{userAuthError && <Error error={userAuthError} />}
 			<Header />
 			<div className='form-wrapper'>
 				<form

@@ -3,12 +3,12 @@ import { useReducer, useContext } from 'react'
 import { userReducers } from '../reducers/authReducer'
 
 const UserProvider = props => {
-	const [{ userInfo, error: userAuthError }, dispatch] = useReducer(
-		userReducers,
-		{
-			userInfo: {},
-		}
-	)
+	const [
+		{ userInfo, error: userAuthError, laoding: authLoading },
+		dispatch,
+	] = useReducer(userReducers, {
+		userInfo: {},
+	})
 
 	const setAuthLoading = () => {
 		dispatch({
@@ -47,6 +47,7 @@ const UserProvider = props => {
 				userAuthError,
 				setUserError,
 				setAuthLoading,
+				authLoading,
 			}}>
 			{props.children}
 		</UserContext.Provider>
