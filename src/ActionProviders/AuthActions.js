@@ -10,8 +10,6 @@ const UserProvider = props => {
 		}
 	)
 
-	console.log(userInfo)
-
 	const setAuthLoading = () => {
 		dispatch({
 			type: 'USER_AUTH_LOADING',
@@ -39,7 +37,6 @@ const UserProvider = props => {
 		})
 		localStorage.removeItem('userToken')
 	}
-	console.log(userInfo)
 
 	return (
 		<UserContext.Provider
