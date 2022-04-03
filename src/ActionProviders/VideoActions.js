@@ -1,6 +1,6 @@
 import { VideosContext } from '../contextCreator'
 import { videosReducer } from '../reducers/videosReducer'
-import { useContext, useReducer } from 'react'
+import { useContext, useReducer, useEffect } from 'react'
 import { categoriesReducer } from '../reducers/categoriesReducer'
 import { fVidReducer } from '../reducers/fVidReducer'
 import axios from 'axios'
@@ -31,9 +31,12 @@ const VideosProvider = props => {
 		})
 	}
 
+	const setVideoLoading = () =>
+		videosDispatcher({ type: 'VIDEOS_LOADING_TRUE' })
+
 	const fetchVideos = async () => {
 		try {
-			videosDispatcher({ type: 'VIDEOS_LOADING_TRUE' })
+			setVideoLoading()
 
 			const res = await axios.get('/api/videos')
 
@@ -80,6 +83,12 @@ const VideosProvider = props => {
 		}
 	}
 
+	useEffect(() => {
+		fetchVideos()
+		fetchCategories()
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [])
+
 	return (
 		<VideosContext.Provider
 			value={{
@@ -93,6 +102,7 @@ const VideosProvider = props => {
 				filteredVideos,
 				videos,
 				setFilteredData,
+				setVideoLoading,
 			}}>
 			{props.children}
 		</VideosContext.Provider>

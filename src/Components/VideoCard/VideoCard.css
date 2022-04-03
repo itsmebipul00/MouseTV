@@ -1,0 +1,9 @@
+.liked-video {
+	fill: hsl(var(--clr-blue));
+}
+
+.toggle-like-btn {
+	border: none;
+	cursor: pointer;
+	background-color: unset;
+}

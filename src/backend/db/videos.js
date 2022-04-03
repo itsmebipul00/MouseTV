@@ -17,6 +17,7 @@ export const videos = [
 		duration: '2:27',
 		uploaded: 'Mar 19, 2019',
 		category: 'children',
+		likes: '788',
 	},
 	{
 		_id: 'd9d9490b-491d-403a-bcea-3d963d5cdf30',
@@ -29,6 +30,7 @@ export const videos = [
 		duration: '2:27',
 		uploaded: 'Mar 19, 2019',
 		category: 'children',
+		likes: '66',
 	},
 	{
 		_id: '8dc638c3-78e9-456d-8773-661977dc6611',
@@ -41,6 +43,7 @@ export const videos = [
 		duration: '2:27',
 		uploaded: 'Mar 19, 2019',
 		category: 'children',
+		likes: '66',
 	},
 	{
 		_id: '968b37c5-3117-4cc0-b7c4-52f40939e84e',
@@ -53,6 +56,7 @@ export const videos = [
 		duration: '3:18',
 		uploaded: 'Jun 1, 2016',
 		category: 'action',
+		likes: '311',
 	},
 	{
 		_id: '513070c7-8f94-4196-bf97-7ce0d582e0a7',
@@ -65,6 +69,7 @@ export const videos = [
 		duration: '3:18',
 		uploaded: 'Jun 1, 2016',
 		category: 'action',
+		likes: '88',
 	},
 	{
 		_id: '3a45250f-74f5-48d8-ad96-e1228fec50e5',
@@ -77,6 +82,7 @@ export const videos = [
 		duration: '3:18',
 		uploaded: 'Jun 1, 2016',
 		category: 'action',
+		likes: '11',
 	},
 	{
 		_id: 'ff9aaad1-d08f-48df-8492-ed3c7c033fbc',
@@ -89,6 +95,7 @@ export const videos = [
 		duration: '3:36',
 		uploaded: 'Sep 27, 2019',
 		category: 'comedy',
+		likes: '55',
 	},
 	{
 		_id: 'ea63fe27-85de-43ac-812c-a8bee8a6d217',
@@ -101,6 +108,7 @@ export const videos = [
 		duration: '3:36',
 		uploaded: 'Sep 27, 2019',
 		category: 'comedy',
+		likes: '55',
 	},
 	{
 		_id: '5e4e60dd-ba0b-4005-8269-efee783c8086',
@@ -113,6 +121,7 @@ export const videos = [
 		duration: '3:36',
 		uploaded: 'Sep 27, 2019',
 		category: 'comedy',
+		likes: '33',
 	},
 	{
 		_id: '36eb9f69-41a6-4202-97f7-0669069cf364',
@@ -126,6 +135,7 @@ export const videos = [
 		duration: '2:48',
 		uploaded: 'Oct 11, 2021',
 		category: 'drama',
+		likes: '88',
 	},
 	{
 		_id: '355d821a-88d0-4691-8f9a-c1c395e836ce',
@@ -138,6 +148,7 @@ export const videos = [
 		duration: '2:48',
 		uploaded: 'Oct 11, 2021',
 		category: 'drama',
+		likes: '99',
 	},
 	{
 		_id: '8e2f6800-059f-4642-aab2-8ebc06c08688',
@@ -150,6 +161,7 @@ export const videos = [
 		duration: '2:48',
 		uploaded: 'Oct 11, 2021',
 		category: 'drama',
+		likes: '2',
 	},
 	{
 		_id: '8aedd186-62da-4415-bd35-d2f88f407e4c',
@@ -162,6 +174,7 @@ export const videos = [
 		duration: '2:43',
 		uploaded: 'Jul 6, 2020',
 		category: 'romance',
+		likes: '522',
 	},
 	{
 		_id: 'c0725f0f-e2b7-4a4c-a477-889d38cbfdcc',
@@ -174,6 +187,7 @@ export const videos = [
 		duration: '2:43',
 		uploaded: 'Jul 6, 2020',
 		category: 'romance',
+		likes: '2298',
 	},
 	{
 		_id: 'b9e4a69b-88c3-4918-8e54-4b1469079a99',
@@ -186,6 +200,7 @@ export const videos = [
 		duration: '2:43',
 		uploaded: 'Jul 6, 2020',
 		category: 'romance',
+		likes: '651',
 	},
 	{
 		_id: '0f48c139-97c7-404d-beeb-b72fcf6ce083',
@@ -198,6 +213,7 @@ export const videos = [
 		duration: '1:32',
 		uploaded: 'Feb 17, 2021',
 		category: 'horror',
+		likes: '211',
 	},
 	{
 		_id: '291b2fc5-cc37-4c76-8204-0e7b4992e27c',
@@ -210,6 +226,7 @@ export const videos = [
 		duration: '1:32',
 		uploaded: 'Feb 17, 2021',
 		category: 'horror',
+		likes: '62',
 	},
 	{
 		_id: '75744198-35eb-460f-82b5-ece9bd99eb41',
@@ -222,6 +239,7 @@ export const videos = [
 		duration: '1:32',
 		uploaded: 'Feb 17, 2021',
 		category: 'horror',
+		likes: '52',
 	},
 	{
 		_id: '27d06c4c-e79b-44ed-ac50-5a027aca0218',
@@ -234,6 +252,7 @@ export const videos = [
 		duration: '1:58',
 		uploaded: 'Jun 25, 2021',
 		category: 'fantasy',
+		likes: '42',
 	},
 	{
 		_id: '63e59ba0-8f7e-44b4-b3a7-1ee9fe434d3f',
@@ -246,6 +265,7 @@ export const videos = [
 		duration: '1:58',
 		uploaded: 'Jun 25, 2021',
 		category: 'fantasy',
+		likes: '25',
 	},
 	{
 		_id: '38982d2f-f29a-4f91-aace-336cafceab31',
@@ -258,5 +278,6 @@ export const videos = [
 		duration: '1:58',
 		uploaded: 'Jun 25, 2021',
 		category: 'fantasy',
+		likes: '22',
 	},
 ]

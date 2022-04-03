@@ -5,26 +5,17 @@ import { Loader } from '../../Components/Loader/Loader.js'
 import { Error } from '../../Components/Error/Error.js'
 import ReactPlayer from 'react-player'
 
+import { useLikes } from '../../ActionProviders/LikesAction.js'
+
 import { useParams } from 'react-router-dom'
 import { Header } from '../../Components/Header/Header.js'
-import {
-	IcBaselinePlaylistAdd,
-	BiHandThumbsUpFill,
-	CarbonThumbsDownFilled,
-	WatchLaterIcon,
-} from '../../assets/logos'
 
 import './VideoScreen.css'
 
+import { VideoCTAs } from '../../Components/VideoCTAs/VideoCTAs.js'
+
 export const VideoScreen = () => {
 	const { id } = useParams()
-
-	const iconSize = {
-		height: '2rem',
-		width: '2rem',
-		fill: 'black',
-		stroke: 'black',
-	}
 
 	const [
 		{ video, loading: videoLoading, error: videoError },
@@ -50,6 +41,10 @@ export const VideoScreen = () => {
 			})
 		}
 	}
+
+	const { likes, toogleLikesVideos } = useLikes()
+
+	const likedVideo = likes.find(likedV => likedV._id === id)
 
 	useEffect(() => {
 		fetchVideo(id)
@@ -81,16 +76,11 @@ export const VideoScreen = () => {
 								<p className='video-uploaded'>{video.uploaded}</p>
 								<p className='category uppercase'>{video.category}</p>
 							</span>
-							<span className='videos-sub-info'>
-								<IcBaselinePlaylistAdd {...iconSize} />
-								<WatchLaterIcon
-									{...iconSize}
-									fill='white'
-									stroke='white'
-								/>
-								<BiHandThumbsUpFill {...iconSize} />
-								<CarbonThumbsDownFilled {...iconSize} />
-							</span>
+							<VideoCTAs
+								toogleLikesVideos={toogleLikesVideos}
+								likedVideo={likedVideo}
+								video={video}
+							/>
 						</span>
 						<div className='video-description fs-500 letter-spacing-4'>
 							{video.description}
