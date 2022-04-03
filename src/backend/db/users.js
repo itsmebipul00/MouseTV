@@ -12,6 +12,8 @@ export const users = [
 		username: 'Bipul',
 		email: 'itsmebipul00@gmail.com',
 		password: 'itsmebipul00@gmail.com',
+		likes: [],
+		watchlater: [],
 		createdAt: formatDate(),
 		updatedAt: formatDate(),
 	},

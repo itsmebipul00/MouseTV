@@ -7,6 +7,7 @@ import { VideoScreen } from './Screens/VideoScreen/VideoScreen'
 import { UserProvider } from './ActionProviders/AuthActions'
 import { RegisterScreen } from './Screens/RegisterScreen/RegisterScreen'
 import { LikesProvider } from './ActionProviders/LikesAction'
+import { WatchLaterProvider } from './ActionProviders/WatchLaterActions'
 import LoginScreen from './Screens/LoginScreen/LoginScreen'
 
 function App() {
@@ -14,18 +15,23 @@ function App() {
 		<UserProvider>
 			<VideosProvider>
 				<LikesProvider>
-					<BrowserRouter>
-						<Routes>
-							<Route path='/' element={<HomeScreen />} />
-							<Route
-								path='/videos'
-								element={<VideoListingScreen />}
-							/>
-							<Route path='/video/:id' element={<VideoScreen />} />
-							<Route path='/register' element={<RegisterScreen />} />
-							<Route path='/login' element={<LoginScreen />} />
-						</Routes>
-					</BrowserRouter>
+					<WatchLaterProvider>
+						<BrowserRouter>
+							<Routes>
+								<Route path='/' element={<HomeScreen />} />
+								<Route
+									path='/videos'
+									element={<VideoListingScreen />}
+								/>
+								<Route path='/video/:id' element={<VideoScreen />} />
+								<Route
+									path='/register'
+									element={<RegisterScreen />}
+								/>
+								<Route path='/login' element={<LoginScreen />} />
+							</Routes>
+						</BrowserRouter>
+					</WatchLaterProvider>
 				</LikesProvider>
 			</VideosProvider>
 		</UserProvider>

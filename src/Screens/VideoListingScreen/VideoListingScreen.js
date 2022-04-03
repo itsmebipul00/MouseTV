@@ -18,7 +18,11 @@ import { Error } from '../../Components/Error/Error'
 
 import { useLikes } from '../../ActionProviders/LikesAction'
 
+import { useWatchLater } from '../../ActionProviders/WatchLaterActions'
+
 import './VideoListingScreen.css'
+
+// import { useWatchLater } from '../../ActionProviders/WatchLaterActions.js'
 
 export const VideoListingScreen = () => {
 	const {
@@ -33,6 +37,8 @@ export const VideoListingScreen = () => {
 	} = useVideos()
 
 	const { likes, toogleLikesVideos } = useLikes()
+
+	const { toggleWatchLater, watchLater } = useWatchLater()
 
 	const handleFiltersAction = cat => {
 		if (cat === 'all') {
@@ -97,11 +103,13 @@ export const VideoListingScreen = () => {
 							_id={video._id}
 							poster={video.poster}
 							title={video.title}
+							video={video}
 							duration={video.duration}
 							key={video.id}
-							video={video}
 							toogleLikesVideos={toogleLikesVideos}
 							likes={likes}
+							toggleWatchLater={toggleWatchLater}
+							watchLater={watchLater}
 						/>
 					))}
 			</div>

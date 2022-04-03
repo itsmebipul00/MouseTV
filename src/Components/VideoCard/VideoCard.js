@@ -12,9 +12,17 @@ export const VideoCard = props => {
 		video,
 		toogleLikesVideos,
 		likes,
+		watchLater,
+		toggleWatchLater,
 	} = props
 
 	const likedVideo = likes.find(likedV => likedV._id === _id)
+		? true
+		: false
+
+	const isWatchLater = watchLater.find(whatchL => whatchL._id === _id)
+		? true
+		: false
 
 	return (
 		<div className='video'>
@@ -24,8 +32,11 @@ export const VideoCard = props => {
 			<div className='video-info'>
 				<VideoCTAs
 					likedVideo={likedVideo}
+					isWatchLater={isWatchLater}
 					toogleLikesVideos={toogleLikesVideos}
 					video={video}
+					watchLater={watchLater}
+					toggleWatchLater={toggleWatchLater}
 				/>
 				<div className='video-sub-info video-title '>
 					<p className='video-duration'>

@@ -3,3 +3,8 @@
 	gap: 0.5rem;
 	padding: 0.5rem;
 }
+
+.toggle-watchlist-btn {
+	border: 0;
+	cursor: pointer;
+}
