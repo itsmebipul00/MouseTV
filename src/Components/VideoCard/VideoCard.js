@@ -35,7 +35,6 @@ export const VideoCard = props => {
 					isWatchLater={isWatchLater}
 					toogleLikesVideos={toogleLikesVideos}
 					video={video}
-					watchLater={watchLater}
 					toggleWatchLater={toggleWatchLater}
 				/>
 				<div className='video-sub-info video-title '>

@@ -8,3 +8,63 @@
 	border: 0;
 	cursor: pointer;
 }
+
+.dialog-box-wrapper {
+	position: fixed;
+	height: 100vh;
+	inset: 0% 0% 0% 0%;
+	backdrop-filter: blur(0.5rem);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.dialog-box {
+	background-color: hsl(var(--clr-light));
+	padding: 2rem;
+}
+
+.new-Playlist {
+	min-height: 0;
+	display: block;
+	height: fit-content;
+	gap: 1rem;
+}
+
+.playlist {
+	padding: 0.35rem;
+	border: 2px solid hsl(var(--clr-dark));
+}
+
+.btn-create-playlist {
+	border: 2px solid hsl(var(--clr-dark));
+	padding: 0 1.5rem;
+}
+
+.save-to {
+	margin-bottom: 1rem;
+	border-bottom: 2px solid hsl(var(--clr-red));
+	color: hsl(var(--clr-dark));
+}
+
+.create-save {
+	margin-top: 2rem;
+	padding: 0.5rem 0;
+	color: hsl(var(--clr-dark));
+	border-top: 2px solid hsl(var(--clr-red));
+}
+
+.title {
+	color: hsl(var(--clr-white));
+	background-color: hsl(var(--clr-dark));
+	padding: 0.5rem 1rem;
+	cursor: pointer;
+	margin-bottom: 1rem;
+}
+
+.new-playlist-title {
+	border-bottom: 2px solid hsl(var(--clr-red));
+	color: hsl(var(--clr-dark));
+	margin-bottom: 1rem;
+}

@@ -14,6 +14,7 @@ export const users = [
 		password: 'itsmebipul00@gmail.com',
 		likes: [],
 		watchlater: [],
+		playlists: [],
 		createdAt: formatDate(),
 		updatedAt: formatDate(),
 	},

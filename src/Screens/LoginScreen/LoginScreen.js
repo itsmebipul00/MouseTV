@@ -9,7 +9,7 @@ import axios from 'axios'
 import { Loader } from '../../Components/Loader/Loader'
 import { Error } from '../../Components/Error/Error'
 
-const LoginScreen = () => {
+export const LoginScreen = () => {
 	const navigate = useNavigate()
 	const [loginFormData, setLoginFormData] = useState({
 		email: '',
@@ -150,5 +150,3 @@ const LoginScreen = () => {
 		</>
 	)
 }
-
-export default LoginScreen
