@@ -10,6 +10,14 @@ import { LikesProvider } from './ActionProviders/LikesAction'
 import { WatchLaterProvider } from './ActionProviders/WatchLaterActions'
 import { PlayListProvider } from './ActionProviders/PlayListAction'
 
+import { ProtectedScreens } from './Screens/ProtectedScreens/ProtectedScreens'
+import { UserProfileScreen } from './Screens/UserProfileScreen/UserProfileScreen'
+import { WatchLaterScreen } from './Screens/WatchLaterScreen/WatchLaterScreen'
+import { PlayListScreen } from './Screens/PlayListScreen/PlayListScreen'
+import { HistoryScreen } from './Screens/HistoryScreen/HistoryScreen'
+
+import { Playlist } from './Screens/PlayListScreen/PlaylistCard.js'
+
 import { LoginScreen } from './Screens/LoginScreen/LoginScreen'
 
 function App() {
@@ -35,6 +43,25 @@ function App() {
 										element={<RegisterScreen />}
 									/>
 									<Route path='/login' element={<LoginScreen />} />
+									<Route path='/' element={<ProtectedScreens />}>
+										<Route
+											path='user'
+											element={<UserProfileScreen />}
+										/>
+										<Route
+											path='playlist'
+											element={<PlayListScreen />}>
+											<Route path=':id' element={<Playlist />} />
+										</Route>
+										<Route
+											path='watchlater'
+											element={<WatchLaterScreen />}
+										/>
+										<Route
+											path='history'
+											element={<HistoryScreen />}
+										/>
+									</Route>
 								</Routes>
 							</BrowserRouter>
 						</PlayListProvider>

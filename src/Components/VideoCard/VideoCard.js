@@ -3,6 +3,10 @@ import { VideoCTAs } from '../VideoCTAs/VideoCTAs'
 
 import { Link } from 'react-router-dom'
 
+import { RiDeleteBin7Fill } from '../../assets/logos'
+
+import { usePlayList } from '../../ActionProviders/PlayListAction'
+
 export const VideoCard = props => {
 	const {
 		_id,
@@ -14,7 +18,10 @@ export const VideoCard = props => {
 		likes,
 		watchLater,
 		toggleWatchLater,
+		playListTobeShown,
 	} = props
+
+	const { deleteFromPlaylist } = usePlayList()
 
 	const likedVideo = likes.find(likedV => likedV._id === _id)
 		? true
@@ -25,7 +32,7 @@ export const VideoCard = props => {
 		: false
 
 	return (
-		<div className='video'>
+		<div className='video p-relative'>
 			<Link to={`/video/${_id}`} className='link'>
 				<img src={poster} alt={`${title}`} className='video-poster' />
 			</Link>
@@ -45,6 +52,18 @@ export const VideoCard = props => {
 					</p>
 					<p className='fs-500 text-red'>{title}</p>
 				</div>
+				<button
+					onClick={() => deleteFromPlaylist(video, playListTobeShown)}
+					className='playlist-delete'>
+					<RiDeleteBin7Fill
+						width='1.5rem'
+						height='1.5rem'
+						stroke='white'
+						fill='white'
+						pathfill='white'
+						className='delete-video-playlist'
+					/>
+				</button>
 			</div>
 		</div>
 	)

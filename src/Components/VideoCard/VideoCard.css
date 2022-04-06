@@ -7,3 +7,17 @@
 	cursor: pointer;
 	background-color: unset;
 }
+
+.playlist-delete {
+	display: none;
+}
+
+.playlistScreen .playlist-delete {
+	display: inline;
+	border: 0;
+}
+
+.delete-video-playlist {
+	position: absolute;
+	inset: 3% 0% 0% 80%;
+}

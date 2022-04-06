@@ -188,3 +188,43 @@ export function IcTwotoneArrowCircleRight(props) {
 		</svg>
 	)
 }
+
+export function PhUserRectangleBold(props) {
+	return (
+		<svg width='1em' height='1em' viewBox='0 0 256 256' {...props}>
+			<path
+				fill='currentColor'
+				d='M216 36H40a20.1 20.1 0 0 0-20 20v144a20.1 20.1 0 0 0 20 20h176a20.1 20.1 0 0 0 20-20V56a20.1 20.1 0 0 0-20-20Zm-116 92a28 28 0 1 1 28 28a28.1 28.1 0 0 1-28-28Zm28 52a60.1 60.1 0 0 1 40.9 16H87.1a60.1 60.1 0 0 1 40.9-16Zm84 16h-12.4a83.9 83.9 0 0 0-34.6-31.5a52 52 0 1 0-74 0A83.9 83.9 0 0 0 56.4 196H44V60h168Z'></path>
+		</svg>
+	)
+}
+
+export function IcBaselineHistory(props) {
+	return (
+		<svg width='1em' height='1em' viewBox='0 0 24 24' {...props}>
+			<path
+				fill='currentColor'
+				d='M13 3a9 9 0 0 0-9 9H1l3.89 3.89l.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7s-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.954 8.954 0 0 0 13 21a9 9 0 0 0 0-18zm-1 5v5l4.28 2.54l.72-1.21l-3.5-2.08V8H12z'></path>
+		</svg>
+	)
+}
+
+export function IcBaselineWatchLater(props) {
+	return (
+		<svg width='1em' height='1em' viewBox='0 0 24 24' {...props}>
+			<path
+				fill='currentColor'
+				d='M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10s10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7l-.8 1.3z'></path>
+		</svg>
+	)
+}
+
+export function RiDeleteBin7Fill(props) {
+	return (
+		<svg width='1em' height='1em' viewBox='0 0 24 24' {...props}>
+			<path
+				fill={props.pathfill}
+				d='M7 6V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v3h5v2h-2v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V8H2V6h5zm2-2v2h6V4H9z'></path>
+		</svg>
+	)
+}

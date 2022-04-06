@@ -81,6 +81,46 @@ const PlayListProvider = props => {
 		}
 	}
 
+	const deleteFromPlaylist = async (vid, play) => {
+		try {
+			const res = await axios.delete(
+				`/api/user/playlists/${play._id}/${vid._id}`,
+				config
+			)
+
+			const data = res.data.playlist
+
+			dispatch({
+				type: 'DELETE_VIDEO_FROM_PLAYLIST',
+				payload: data,
+			})
+		} catch (error) {
+			console.log(error)
+			playListError(error.message)
+		}
+	}
+
+	const deletePlaylist = async id => {
+		try {
+			const res = await axios.delete(
+				`/api/user/playlists/${id}`,
+				config
+			)
+
+			const data = res.data.playlists
+
+			console.log(data)
+
+			dispatch({
+				type: 'DELETE_PLAYLIST',
+				payload: data,
+			})
+		} catch (error) {
+			// console.log(error)
+			playListError(error.message)
+		}
+	}
+
 	return (
 		<PlayListContext.Provider
 			value={{
@@ -88,6 +128,8 @@ const PlayListProvider = props => {
 				playList,
 				errorPlayList,
 				addVideoToPlaylist,
+				deleteFromPlaylist,
+				deletePlaylist,
 			}}>
 			{props.children}
 		</PlayListContext.Provider>

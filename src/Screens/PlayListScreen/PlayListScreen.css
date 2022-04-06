@@ -1,0 +1,21 @@
+/* .playlist-videos .video-cta-icons {
+	display: none;
+} */
+
+.playlist-titles {
+	justify-content: space-between;
+	flex-wrap: wrap;
+	display: flex;
+	margin-bottom: 2rem;
+	gap: 1rem;
+}
+
+.playlist-titles > * {
+	padding: 0.5rem 2rem;
+	background-color: hsl(var(--clr-light));
+	color: hsl(var(--clr-dark));
+}
+
+.delete-playlist {
+	margin-top: 0.1rem;
+}

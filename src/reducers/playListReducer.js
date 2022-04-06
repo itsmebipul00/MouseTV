@@ -21,13 +21,20 @@ export const playListReducer = (state = { playList: [] }, action) => {
 					playList: [...state.playList, action.payload],
 				}
 			}
-
+		case 'DELETE_VIDEO_FROM_PLAYLIST':
+			return {
+				...state,
+				playList: state.playList.map(pL =>
+					pL._id === action.payload._id ? action.payload : pL
+				),
+			}
+		case 'DELETE_PLAYLIST':
+			return {
+				playList: action.payload,
+			}
 		case 'PLAYLIST_ERROR':
 			return { error: action.payload }
-
 		default:
 			return state
 	}
 }
-
-// playList: state.playList.map(pL => pL._id === existPlayList._id ? ),
