@@ -50,7 +50,7 @@ export const VideoCTAs = ({
 	const { createPlaylist, playList, addVideoToPlaylist } =
 		usePlayList()
 
-	// console.log(playList)
+	console.log(playList, video)
 
 	const playListHandler = (e, video) => {
 		console.log(video)

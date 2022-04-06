@@ -1,18 +1,12 @@
 import './PlayListScreen.css'
 
 import { usePlayList } from '../../ActionProviders/PlayListAction'
-import { Outlet, useNavigate } from 'react-router-dom'
+import { NavLink, Outlet } from 'react-router-dom'
 
 export const PlayListScreen = () => {
 	const { playList } = usePlayList()
 
-	const navigate = useNavigate()
-
 	console.log(playList)
-
-	const gotoPlaylist = id => {
-		navigate(`/playlist/${id}`)
-	}
 
 	return (
 		<div className='playlistScreen'>
@@ -20,9 +14,7 @@ export const PlayListScreen = () => {
 				{playList &&
 					playList.length > 0 &&
 					playList.map(p => (
-						<>
-							<p onClick={() => gotoPlaylist(p._id)}>{p.title}</p>
-						</>
+						<NavLink to={`/playlist/${p._id}`}>{p.title}</NavLink>
 					))}
 			</div>
 			<div>

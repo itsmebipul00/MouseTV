@@ -3,7 +3,6 @@
 } */
 
 .playlist-titles {
-	justify-content: space-between;
 	flex-wrap: wrap;
 	display: flex;
 	margin-bottom: 2rem;
@@ -18,4 +17,14 @@
 
 .delete-playlist {
 	margin-top: 0.1rem;
+}
+
+.playlist-text{
+	text-align: center;
+}
+
+.delete-playlist{
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }

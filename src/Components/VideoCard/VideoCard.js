@@ -1,7 +1,7 @@
 import './VideoCard.css'
 import { VideoCTAs } from '../VideoCTAs/VideoCTAs'
 
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import { RiDeleteBin7Fill } from '../../assets/logos'
 
@@ -21,7 +21,7 @@ export const VideoCard = props => {
 		playListTobeShown,
 	} = props
 
-	const { deleteFromPlaylist } = usePlayList()
+	const { deleteFromPlaylist, deletePlaylist } = usePlayList()
 
 	const likedVideo = likes.find(likedV => likedV._id === _id)
 		? true
@@ -30,6 +30,17 @@ export const VideoCard = props => {
 	const isWatchLater = watchLater.find(whatchL => whatchL._id === _id)
 		? true
 		: false
+
+	const navigate = useNavigate()
+
+	const handleDeletePlaylist = () => {
+		if (playListTobeShown.videos.length === 1) {
+			deletePlaylist(playListTobeShown._id)
+			navigate('/playlist')
+		} else {
+			deleteFromPlaylist(video, playListTobeShown)
+		}
+	}
 
 	return (
 		<div className='video p-relative'>
@@ -53,7 +64,7 @@ export const VideoCard = props => {
 					<p className='fs-500 text-red'>{title}</p>
 				</div>
 				<button
-					onClick={() => deleteFromPlaylist(video, playListTobeShown)}
+					onClick={handleDeletePlaylist}
 					className='playlist-delete'>
 					<RiDeleteBin7Fill
 						width='1.5rem'

@@ -28,7 +28,6 @@ export const Playlist = () => {
 	const playListTobeShown = playList.find(pL => pL._id === id)
 
 	const { videos } = playListTobeShown
-	console.log(videos)
 
 	const handleDeletePlaylsit = () => {
 		deletePlaylist(playListTobeShown._id)
@@ -40,7 +39,6 @@ export const Playlist = () => {
 			<button
 				onClick={handleDeletePlaylsit}
 				className='playlist-delete'>
-				DELETE PLAYLIST
 				<RiDeleteBin7Fill
 					width='1.5rem'
 					height='1.5rem'
@@ -49,6 +47,7 @@ export const Playlist = () => {
 					pathfill='black'
 					className='delete-playlist'
 				/>
+				<span className='playlist-text'>PLAYLIST</span>
 			</button>
 			<div className='videos-listed playlist-videos'>
 				{id &&

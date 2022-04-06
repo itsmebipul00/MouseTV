@@ -1,11 +1,6 @@
 export const NewPlaylistDialog = props => {
-	const {
-		setNewPlaylist,
-		newPlaylist,
-		playListHandler,
-		video,
-		showNewPlayList,
-	} = props
+	const { setNewPlaylist, newPlaylist, playListHandler, video } =
+		props
 
 	return (
 		<form

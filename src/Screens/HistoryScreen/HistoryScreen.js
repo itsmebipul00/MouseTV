@@ -1,3 +1,7 @@
 export const HistoryScreen = () => {
-	return <div>HistoryScreen</div>
+	return(
+        <div className="history-screen">
+            
+        </div>
+    )
 }
