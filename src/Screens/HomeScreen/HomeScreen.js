@@ -1,6 +1,6 @@
 import './HomeScreen.css'
 
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 
 import { Header } from '../../Components/Header/Header'
 import { Footer } from '../../Components/Footer/Footer'
@@ -34,8 +34,6 @@ const HomeScreen = () => {
 		categoriesError,
 		videos,
 		setFilteredData,
-		fetchVideos,
-		fetchCategories,
 	} = useVideos()
 
 	const handleFiltersAction = cat => {

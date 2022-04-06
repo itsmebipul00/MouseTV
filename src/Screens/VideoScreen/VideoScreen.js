@@ -73,7 +73,6 @@ export const VideoScreen = () => {
 						height='98vh'
 						url={video.url}
 						className='react-player'
-						// playing={true}
 						controls
 					/>
 					<div className='video-details'>

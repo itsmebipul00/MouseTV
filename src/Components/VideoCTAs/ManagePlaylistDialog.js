@@ -1,5 +1,4 @@
 export const ManagePlaylistDialog = props => {
-	// console.log(props)
 	// DialogBox will return nothing WHEN !props.showDialog is true I.E WHEN the show value is false
 	if (!props.showDialog) {
 		return null

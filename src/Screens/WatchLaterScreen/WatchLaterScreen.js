@@ -7,12 +7,10 @@ import { useLikes } from '../../ActionProviders/LikesAction'
 import { VideoCard as Video } from '../../Components/VideoCard/VideoCard'
 
 export const WatchLaterScreen = () => {
-	const { toggleWatchLater, watchLater, clearWatchLater } =
-		useWatchLater()
+	const { toggleWatchLater, watchLater } = useWatchLater()
 
 	const { likes, toogleLikesVideos } = useLikes()
 
-	console.log(watchLater)
 	return (
 		<div className='videos-listed'>
 			{watchLater &&

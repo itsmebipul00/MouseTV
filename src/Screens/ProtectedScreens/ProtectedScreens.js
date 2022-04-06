@@ -1,15 +1,9 @@
-import {
-	NavLink,
-	Outlet,
-	useLocation,
-	useNavigate,
-} from 'react-router-dom'
+import { NavLink, Outlet } from 'react-router-dom'
 import { Header } from '../../Components/Header/Header'
 
 import './ProtectedScreens.css'
 
 import {
-	WatchLaterIcon,
 	IcSharpAddCircle,
 	PhUserRectangleBold,
 	IcBaselineHistory,
@@ -17,10 +11,6 @@ import {
 } from '../../assets/logos'
 
 export const ProtectedScreens = () => {
-	// const { pathname } = useLocation()
-
-	// const navigate = useNavigate()
-
 	return (
 		<div className='protected'>
 			<Header />
