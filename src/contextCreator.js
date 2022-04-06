@@ -6,4 +6,17 @@ const FilteredVidContext = createContext()
 
 const UserContext = createContext()
 
-export { VideosContext, FilteredVidContext, UserContext }
+const LikesContext = createContext()
+
+const WatchLaterContext = createContext()
+
+const PlayListContext = createContext()
+
+export {
+	VideosContext,
+	FilteredVidContext,
+	UserContext,
+	LikesContext,
+	WatchLaterContext,
+	PlayListContext,
+}

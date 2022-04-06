@@ -1,6 +1,6 @@
 import './HomeScreen.css'
 
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 
 import { Header } from '../../Components/Header/Header'
 import { Footer } from '../../Components/Footer/Footer'
@@ -34,12 +34,11 @@ const HomeScreen = () => {
 		categoriesError,
 		videos,
 		setFilteredData,
-		fetchVideos,
-		fetchCategories,
 	} = useVideos()
 
 	const handleFiltersAction = cat => {
 		if (cat === 'all') {
+			console.log('yaha bhai')
 			setFilteredData(videos)
 		} else {
 			const filteredData = videos.filter(vid => vid.category === cat)
@@ -47,12 +46,6 @@ const HomeScreen = () => {
 		}
 		navigate('/videos')
 	}
-
-	useEffect(() => {
-		fetchVideos()
-		fetchCategories()
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [])
 
 	return (
 		<div className='homepage'>

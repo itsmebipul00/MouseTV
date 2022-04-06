@@ -1,0 +1,24 @@
+.protected-links-wrapper {
+	width: 80%;
+	padding-top: 8rem;
+	margin: 0 auto;
+}
+
+.protected-links {
+	display: flex;
+	justify-content: space-between;
+}
+
+.protected .text {
+	display: none;
+}
+
+.outlet-screens {
+	padding: 2rem;
+}
+
+@media (min-width: 40em) {
+	.protected .text {
+		display: inline;
+	}
+}

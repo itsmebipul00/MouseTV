@@ -1,0 +1,25 @@
+.liked-video {
+	fill: hsl(var(--clr-blue));
+}
+
+.toggle-like-btn {
+	border: none;
+	cursor: pointer;
+	background-color: unset;
+}
+
+.playlist-delete {
+	display: none;
+}
+
+.playlistScreen .playlist-delete {
+	display: inline;
+	border: 0;
+	border-radius: 50%;
+	padding: 1rem;
+}
+
+.delete-video-playlist {
+	position: absolute;
+	inset: 3% 0% 0% 80%;
+}

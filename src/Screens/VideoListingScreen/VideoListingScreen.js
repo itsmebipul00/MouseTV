@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 
 import {
 	IcTwotoneArrowCircleLeft,
@@ -16,6 +16,10 @@ import { Loader } from '../../Components/Loader/Loader'
 
 import { Error } from '../../Components/Error/Error'
 
+import { useLikes } from '../../ActionProviders/LikesAction'
+
+import { useWatchLater } from '../../ActionProviders/WatchLaterActions'
+
 import './VideoListingScreen.css'
 
 export const VideoListingScreen = () => {
@@ -28,9 +32,11 @@ export const VideoListingScreen = () => {
 		categoriesError,
 		videosLoading,
 		videosError,
-		fetchVideos,
-		fetchCategories,
 	} = useVideos()
+
+	const { likes, toogleLikesVideos } = useLikes()
+
+	const { toggleWatchLater, watchLater } = useWatchLater()
 
 	const handleFiltersAction = cat => {
 		if (cat === 'all') {
@@ -47,12 +53,6 @@ export const VideoListingScreen = () => {
 		sliderBtn.current.scrollLeft += scrollOffset
 	}
 
-	useEffect(() => {
-		fetchVideos()
-		fetchCategories()
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [])
-
 	return (
 		<div className='videoListingScreen'>
 			{videosLoading && categoriesLoading && <Loader />}
@@ -63,7 +63,7 @@ export const VideoListingScreen = () => {
 
 			<div className='categories' ref={sliderBtn}>
 				<button
-					onClick={() => scroll(-700)}
+					onClick={() => scroll(-900)}
 					className='scroll-btn left-scroll-btn'>
 					<IcTwotoneArrowCircleLeft
 						className='left-scroll-icon'
@@ -83,7 +83,7 @@ export const VideoListingScreen = () => {
 					))}
 
 				<button
-					onClick={() => scroll(+700)}
+					onClick={() => scroll(+900)}
 					className='scroll-btn right-scroll-btn'>
 					<IcTwotoneArrowCircleRight
 						className='right-scroll-icon'
@@ -97,7 +97,18 @@ export const VideoListingScreen = () => {
 				{filteredVideos &&
 					filteredVideos.length > 0 &&
 					filteredVideos.map(video => (
-						<Video video={video} key={video.id} />
+						<Video
+							_id={video._id}
+							poster={video.poster}
+							title={video.title}
+							video={video}
+							duration={video.duration}
+							key={video.id}
+							toogleLikesVideos={toogleLikesVideos}
+							likes={likes}
+							toggleWatchLater={toggleWatchLater}
+							watchLater={watchLater}
+						/>
 					))}
 			</div>
 		</div>

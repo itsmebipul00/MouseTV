@@ -1,43 +1,80 @@
 import './VideoCard.css'
-import {
-	IcBaselinePlaylistAdd,
-	BiHandThumbsUpFill,
-	CarbonThumbsDownFilled,
-	WatchLaterIcon,
-} from '../../assets/logos'
-import { Link } from 'react-router-dom'
+import { VideoCTAs } from '../VideoCTAs/VideoCTAs'
+
+import { Link, useNavigate } from 'react-router-dom'
+
+import { RiDeleteBin7Fill } from '../../assets/logos'
+
+import { usePlayList } from '../../ActionProviders/PlayListAction'
 
 export const VideoCard = props => {
-	const iconSize = {
-		height: '1.5rem',
-		width: '1.5rem',
-		fill: 'black',
-		stroke: 'black',
+	const {
+		_id,
+		poster,
+		title,
+		duration,
+		video,
+		toogleLikesVideos,
+		likes,
+		watchLater,
+		toggleWatchLater,
+		playListTobeShown,
+	} = props
+
+	const { deleteFromPlaylist, deletePlaylist } = usePlayList()
+
+	const likedVideo = likes.find(likedV => likedV._id === _id)
+		? true
+		: false
+
+	const isWatchLater = watchLater.find(whatchL => whatchL._id === _id)
+		? true
+		: false
+
+	const navigate = useNavigate()
+
+	const handleDeletePlaylist = () => {
+		if (playListTobeShown.videos.length === 1) {
+			deletePlaylist(playListTobeShown._id)
+			navigate('/playlist')
+		} else {
+			deleteFromPlaylist(video, playListTobeShown)
+		}
 	}
-	const { video } = props
+
 	return (
-		<div className='video'>
-			<Link to={`/video/${video._id}`} className='link'>
-				<img
-					src={video.poster}
-					alt={`${video.title}`}
-					className='video-poster'
-				/>
+		<div className='video p-relative'>
+			<Link to={`/video/${_id}`} className='link'>
+				<img src={poster} alt={`${title}`} className='video-poster' />
 			</Link>
 			<div className='video-info'>
-				<div className='video-cta-icons'>
-					<IcBaselinePlaylistAdd {...iconSize} />
-					<WatchLaterIcon {...iconSize} />
-					<BiHandThumbsUpFill {...iconSize} />
-					<CarbonThumbsDownFilled {...iconSize} />
-				</div>
+				<VideoCTAs
+					likedVideo={likedVideo}
+					isWatchLater={isWatchLater}
+					toogleLikesVideos={toogleLikesVideos}
+					video={video}
+					toggleWatchLater={toggleWatchLater}
+				/>
 				<div className='video-sub-info video-title '>
 					<p className='video-duration'>
 						<span className='text-red'>Duration:</span>{' '}
-						{video.duration}
+						<span>{duration}</span>
+						<span></span>
 					</p>
-					<p className='fs-500 text-red'>{video.title}</p>
+					<p className='fs-500 text-red'>{title}</p>
 				</div>
+				<button
+					onClick={handleDeletePlaylist}
+					className='playlist-delete'>
+					<RiDeleteBin7Fill
+						width='1.5rem'
+						height='1.5rem'
+						stroke='white'
+						fill='white'
+						pathfill='white'
+						className='delete-video-playlist'
+					/>
+				</button>
 			</div>
 		</div>
 	)

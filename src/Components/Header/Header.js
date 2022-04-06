@@ -17,13 +17,15 @@ export const Header = () => {
 	return (
 		<header className='header d-flex'>
 			<div className='d-flex'>
-				<GalaMouse
-					width='3rem'
-					height='3rem'
-					fill='white'
-					stroke='white'
-				/>
-				<h1 className='brand-name letter-spacing-4 d-inline'>tv</h1>
+				<Link to='/videos' className='d-inline'>
+					<GalaMouse
+						width='3rem'
+						height='3rem'
+						fill='white'
+						stroke='white'
+					/>
+					<h1 className='brand-name letter-spacing-4 d-inline'>tv</h1>
+				</Link>
 			</div>
 			<div className='d-flex header-side'>
 				<label
@@ -47,13 +49,22 @@ export const Header = () => {
 				</div>
 
 				{isUserObjEmpty ? (
-					<Link to='/login' className='login-link'>
-						<UiwLogout
-							width='2rem'
-							height='1.5rem '
-							className='login-icon'
-						/>
-					</Link>
+					<>
+						<Link to='/login' className='login-link'>
+							<UiwLogout
+								width='2rem'
+								height='1.5rem '
+								className='login-icon'
+							/>
+						</Link>
+						<Link to='/user' className='user-icon-link'>
+							<RiUser3Fill
+								className='user-icon'
+								width='2rem'
+								height='2.5rem'
+							/>
+						</Link>
+					</>
 				) : (
 					<>
 						<button onClick={logoutUser} className='logout-button'>
@@ -63,7 +74,7 @@ export const Header = () => {
 								height='2rem'
 							/>
 						</button>
-						<Link to='/userProfile' className='user-icon-link'>
+						<Link to='/user' className='user-icon-link'>
 							<RiUser3Fill
 								className='user-icon'
 								width='2rem'

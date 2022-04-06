@@ -5,26 +5,19 @@ import { Loader } from '../../Components/Loader/Loader.js'
 import { Error } from '../../Components/Error/Error.js'
 import ReactPlayer from 'react-player'
 
+import { useLikes } from '../../ActionProviders/LikesAction.js'
+
+import { useWatchLater } from '../../ActionProviders/WatchLaterActions.js'
+
 import { useParams } from 'react-router-dom'
 import { Header } from '../../Components/Header/Header.js'
-import {
-	IcBaselinePlaylistAdd,
-	BiHandThumbsUpFill,
-	CarbonThumbsDownFilled,
-	WatchLaterIcon,
-} from '../../assets/logos'
+
+import { VideoCTAs } from '../../Components/VideoCTAs/VideoCTAs.js'
 
 import './VideoScreen.css'
 
 export const VideoScreen = () => {
 	const { id } = useParams()
-
-	const iconSize = {
-		height: '2rem',
-		width: '2rem',
-		fill: 'black',
-		stroke: 'black',
-	}
 
 	const [
 		{ video, loading: videoLoading, error: videoError },
@@ -51,6 +44,18 @@ export const VideoScreen = () => {
 		}
 	}
 
+	const { likes, toogleLikesVideos } = useLikes()
+
+	const { watchLater, toggleWatchLater } = useWatchLater()
+
+	const likedVideo = likes.find(likedV => likedV._id === id)
+		? true
+		: false
+
+	const isWatchLater = watchLater.find(whatchL => whatchL._id === id)
+		? true
+		: false
+
 	useEffect(() => {
 		fetchVideo(id)
 		// eslint-disable-next-line react-hooks/exhaustive-deps
@@ -62,13 +67,12 @@ export const VideoScreen = () => {
 			{videoError && <Error error={videoError} />}
 			<Header />
 			{video && video.url && (
-				<div>
+				<section>
 					<ReactPlayer
 						width='98vw'
 						height='98vh'
 						url={video.url}
 						className='react-player'
-						// playing={true}
 						controls
 					/>
 					<div className='video-details'>
@@ -81,22 +85,20 @@ export const VideoScreen = () => {
 								<p className='video-uploaded'>{video.uploaded}</p>
 								<p className='category uppercase'>{video.category}</p>
 							</span>
-							<span className='videos-sub-info'>
-								<IcBaselinePlaylistAdd {...iconSize} />
-								<WatchLaterIcon
-									{...iconSize}
-									fill='white'
-									stroke='white'
-								/>
-								<BiHandThumbsUpFill {...iconSize} />
-								<CarbonThumbsDownFilled {...iconSize} />
-							</span>
+							<VideoCTAs
+								toogleLikesVideos={toogleLikesVideos}
+								likedVideo={likedVideo}
+								video={video}
+								watchLater={watchLater}
+								toggleWatchLater={toggleWatchLater}
+								isWatchLater={isWatchLater}
+							/>
 						</span>
-						<div className='video-description fs-500 letter-spacing-4'>
+						<p className='video-description fs-500 letter-spacing-4'>
 							{video.description}
-						</div>
+						</p>
 					</div>
-				</div>
+				</section>
 			)}
 		</div>
 	)
