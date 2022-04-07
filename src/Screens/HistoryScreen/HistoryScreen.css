@@ -16,8 +16,6 @@
     position: absolute;
     z-index: 99999;
     cursor: pointer;
-    padding: 0.5rem 2rem;
-    margin-bottom: 1rem;
 }
 
 .history-delete-btn svg{
