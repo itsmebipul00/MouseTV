@@ -30,7 +30,6 @@ const PlayListProvider = props => {
 	}
 
 	const createPlaylist = async (newPlaylist, video) => {
-		console.log(newPlaylist, video)
 		try {
 			const res = await axios.post(
 				'/api/user/playlists',
@@ -38,11 +37,7 @@ const PlayListProvider = props => {
 				config
 			)
 
-			console.log(res)
-
-			const playLists = res.data.playlists
-
-			console.log(playLists[playLists.length - 1]._id, video)
+			const playLists = await res.data.playlists
 
 			try {
 				const response = await axios.post(
@@ -50,8 +45,6 @@ const PlayListProvider = props => {
 					{ video },
 					config
 				)
-
-				console.log(response)
 
 				postVideoToPlaylist(response.data.playlist)
 			} catch (error) {
@@ -65,18 +58,14 @@ const PlayListProvider = props => {
 
 	const addVideoToPlaylist = async (id, video) => {
 		try {
-			console.log(id, video)
 			const res = await axios.post(
 				`api/user/playlists/${id}`,
 				{ video },
 				config
 			)
 
-			console.log(playList, res)
-
 			postVideoToPlaylist(res.data.playlist)
 		} catch (error) {
-			console.log(error)
 			playListError(error.message)
 		}
 	}
@@ -109,14 +98,11 @@ const PlayListProvider = props => {
 
 			const data = res.data.playlists
 
-			console.log(data)
-
 			dispatch({
 				type: 'DELETE_PLAYLIST',
 				payload: data,
 			})
 		} catch (error) {
-			// console.log(error)
 			playListError(error.message)
 		}
 	}

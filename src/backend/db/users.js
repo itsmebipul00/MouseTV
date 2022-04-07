@@ -15,6 +15,7 @@ export const users = [
 		likes: [],
 		watchlater: [],
 		playlists: [],
+		history: [],
 		createdAt: formatDate(),
 		updatedAt: formatDate(),
 	},

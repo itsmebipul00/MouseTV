@@ -84,8 +84,6 @@ const LikesProvider = props => {
 		}
 	}
 
-	// console.log(likes)
-
 	return (
 		<LikesContext.Provider
 			value={{

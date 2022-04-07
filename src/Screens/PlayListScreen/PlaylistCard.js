@@ -12,8 +12,6 @@ import './PlayListScreen.css'
 
 import { RiDeleteBin7Fill } from '../../assets/logos'
 
-import { useEffect } from 'react'
-
 export const Playlist = () => {
 	const { id } = useParams()
 

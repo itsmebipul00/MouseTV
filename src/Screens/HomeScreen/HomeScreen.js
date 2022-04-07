@@ -38,7 +38,6 @@ const HomeScreen = () => {
 
 	const handleFiltersAction = cat => {
 		if (cat === 'all') {
-			console.log('yaha bhai')
 			setFilteredData(videos)
 		} else {
 			const filteredData = videos.filter(vid => vid.category === cat)
@@ -68,7 +67,7 @@ const HomeScreen = () => {
 				<section className='categories-wrapper p-relative'>
 					<div className='categories ' ref={sliderBtn}>
 						<button
-							onClick={() => scroll(-700)}
+							onClick={() => scroll(-650)}
 							className='scroll-btn left-scroll-btn'>
 							<IcTwotoneArrowCircleLeft
 								className='left-scroll-icon'
@@ -88,7 +87,7 @@ const HomeScreen = () => {
 							))}
 
 						<button
-							onClick={() => scroll(+700)}
+							onClick={() => scroll(+650)}
 							className='scroll-btn right-scroll-btn'>
 							<IcTwotoneArrowCircleRight
 								className='right-scroll-icon'

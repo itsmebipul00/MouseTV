@@ -20,6 +20,10 @@ svg {
 	max-width: 100%;
 }
 
+svg {
+	display: inline-block;
+}
+
 /* Inherit fonts for inputs and buttons */
 input,
 button,

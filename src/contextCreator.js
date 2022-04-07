@@ -12,6 +12,8 @@ const WatchLaterContext = createContext()
 
 const PlayListContext = createContext()
 
+const HistoryContext = createContext()
+
 export {
 	VideosContext,
 	FilteredVidContext,
@@ -19,4 +21,5 @@ export {
 	LikesContext,
 	WatchLaterContext,
 	PlayListContext,
+	HistoryContext,
 }
