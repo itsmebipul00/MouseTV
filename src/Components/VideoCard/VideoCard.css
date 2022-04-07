@@ -23,3 +23,7 @@
 	position: absolute;
 	inset: 3% 0% 0% 80%;
 }
+
+.video-link{
+	border: 0;
+}

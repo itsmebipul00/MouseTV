@@ -7,6 +7,8 @@ import { RiDeleteBin7Fill } from '../../assets/logos'
 
 import { usePlayList } from '../../ActionProviders/PlayListAction'
 
+import { useHistroy } from '../../ActionProviders/HistoryActions'
+
 export const VideoCard = props => {
 	const {
 		_id,
@@ -22,6 +24,10 @@ export const VideoCard = props => {
 	} = props
 
 	const { deleteFromPlaylist, deletePlaylist } = usePlayList()
+
+	const { addToHistory } = useHistroy()
+
+	// console.log(addtoHistory)
 
 	const likedVideo = likes.find(likedV => likedV._id === _id)
 		? true
@@ -42,11 +48,18 @@ export const VideoCard = props => {
 		}
 	}
 
+	const handlePathtoVideo = video => {
+		addToHistory(video)
+		setTimeout(() => navigate(`/video/${video._id}`, 500))
+	}
+
 	return (
 		<div className='video p-relative'>
-			<Link to={`/video/${_id}`} className='link'>
+			<button
+				onClick={() => handlePathtoVideo(video)}
+				className='video-link'>
 				<img src={poster} alt={`${title}`} className='video-poster' />
-			</Link>
+			</button>
 			<div className='video-info'>
 				<VideoCTAs
 					likedVideo={likedVideo}

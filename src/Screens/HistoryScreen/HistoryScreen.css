@@ -1,0 +1,31 @@
+
+.history-screen{
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.video-link{
+    width: 100%;
+}
+
+.history-delete-btn{
+    margin: 0;
+    border: 0;
+    background: unset;
+    inset: -90% 0% 0% 80%;
+    position: absolute;
+    z-index: 99999;
+    cursor: pointer;
+    padding: 0.5rem 2rem;
+    margin-bottom: 1rem;
+}
+
+.history-delete-btn svg{
+    display: inline;
+}
+
+.history-delete-all{
+    cursor: pointer;
+    
+
+}

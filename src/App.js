@@ -9,6 +9,7 @@ import { RegisterScreen } from './Screens/RegisterScreen/RegisterScreen'
 import { LikesProvider } from './ActionProviders/LikesAction'
 import { WatchLaterProvider } from './ActionProviders/WatchLaterActions'
 import { PlayListProvider } from './ActionProviders/PlayListAction'
+import { HistoryProvider } from './ActionProviders/HistoryActions'
 
 import { ProtectedScreens } from './Screens/ProtectedScreens/ProtectedScreens'
 import { UserProfileScreen } from './Screens/UserProfileScreen/UserProfileScreen'
@@ -27,43 +28,45 @@ function App() {
 				<LikesProvider>
 					<WatchLaterProvider>
 						<PlayListProvider>
-							<BrowserRouter>
-								<Routes>
-									<Route path='/' element={<HomeScreen />} />
-									<Route
-										path='/videos'
-										element={<VideoListingScreen />}
-									/>
-									<Route
-										path='/video/:id'
-										element={<VideoScreen />}
-									/>
-									<Route
-										path='/register'
-										element={<RegisterScreen />}
-									/>
-									<Route path='/login' element={<LoginScreen />} />
-									<Route path='/' element={<ProtectedScreens />}>
+							<HistoryProvider>
+								<BrowserRouter>
+									<Routes>
+										<Route path='/' element={<HomeScreen />} />
 										<Route
-											path='user'
-											element={<UserProfileScreen />}
+											path='/videos'
+											element={<VideoListingScreen />}
 										/>
 										<Route
-											path='playlist'
-											element={<PlayListScreen />}>
-											<Route path=':id' element={<Playlist />} />
+											path='/video/:id'
+											element={<VideoScreen />}
+										/>
+										<Route
+											path='/register'
+											element={<RegisterScreen />}
+										/>
+										<Route path='/login' element={<LoginScreen />} />
+										<Route path='/' element={<ProtectedScreens />}>
+											<Route
+												path='user'
+												element={<UserProfileScreen />}
+											/>
+											<Route
+												path='playlist'
+												element={<PlayListScreen />}>
+												<Route path=':id' element={<Playlist />} />
+											</Route>
+											<Route
+												path='watchlater'
+												element={<WatchLaterScreen />}
+											/>
+											<Route
+												path='history'
+												element={<HistoryScreen />}
+											/>
 										</Route>
-										<Route
-											path='watchlater'
-											element={<WatchLaterScreen />}
-										/>
-										<Route
-											path='history'
-											element={<HistoryScreen />}
-										/>
-									</Route>
-								</Routes>
-							</BrowserRouter>
+									</Routes>
+								</BrowserRouter>
+							</HistoryProvider>
 						</PlayListProvider>
 					</WatchLaterProvider>
 				</LikesProvider>
