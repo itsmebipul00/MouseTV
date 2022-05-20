@@ -8,6 +8,7 @@ import {
 import { useVideos } from '../../ActionProviders/VideoActions'
 
 import { Header } from '../../Components/Header/Header'
+
 import { VideoCard as Video } from '../../Components/VideoCard/VideoCard'
 
 import { Categories } from '../../Components/Categories/Categories'
@@ -72,9 +73,8 @@ export const VideoListingScreen = () => {
 					/>
 				</button>
 
-				{categories &&
-					categories.length > 0 &&
-					categories.map(cat => (
+				{categories?.length > 0 &&
+					categories?.map(cat => (
 						<Categories
 							category={cat}
 							key={cat.id}
@@ -94,9 +94,8 @@ export const VideoListingScreen = () => {
 			</div>
 
 			<div className='videos-listed'>
-				{filteredVideos &&
-					filteredVideos.length > 0 &&
-					filteredVideos.map(video => (
+				{filteredVideos?.length > 0 &&
+					filteredVideos?.map(video => (
 						<Video
 							_id={video._id}
 							poster={video.poster}

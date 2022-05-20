@@ -68,6 +68,8 @@ const VideosProvider = props => {
 			payload: data,
 		})
 
+	// const implementSetTimeout = (cb) => setTimeout(() => cb, 1000)
+
 	const fetchCategories = async () => {
 		try {
 			categoriesDispatcher({ type: 'CATEGORIES_LOADING_TRUE' })

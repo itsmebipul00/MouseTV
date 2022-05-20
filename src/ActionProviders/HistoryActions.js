@@ -8,6 +8,8 @@ import { useReducer } from 'react'
 
 import axios from 'axios'
 
+import { useUser } from './AuthActions'
+
 const HistoryProvider = props => {
 	const [{ history, error: historyError }, dispatch] = useReducer(
 		historyReducer,
@@ -15,10 +17,11 @@ const HistoryProvider = props => {
 			history: [],
 		}
 	)
+	const { userInfo } = useUser()
 
 	const config = {
 		headers: {
-			authorization: localStorage.getItem('userToken'),
+			authorization: userInfo?.encodedToken,
 		},
 	}
 
@@ -52,8 +55,6 @@ const HistoryProvider = props => {
 
 	const addToHistory = async video => {
 		try {
-			console.log('yaha', video)
-
 			const res = await axios.post(
 				'/api/user/history',
 				{
@@ -66,17 +67,13 @@ const HistoryProvider = props => {
 
 			updateHistory(data)
 		} catch (error) {
-			console.log(error)
 			errorMessage(error.message)
 		}
 	}
 
 	const clearHistory = async () => {
-		console.log('YAHA')
 		try {
 			const res = await axios.delete('/api/user/history/all', config)
-
-			console.log(res)
 
 			const data = await res.data.history
 

@@ -36,8 +36,7 @@ export const LoginScreen = () => {
 			})
 			const dataLogin = await resLogin.data
 			localStorage.setItem('userToken', dataLogin.encodedToken)
-			setTimeout(() => setUserAction(dataLogin), 1000)
-			navigate(-1)
+			setUserAction(dataLogin)
 		} catch (error) {
 			setUserError(error.message)
 		}
@@ -53,19 +52,14 @@ export const LoginScreen = () => {
 			}
 		})
 	}
+	const userToken = localStorage.getItem('userToken')
 
 	useEffect(() => {
-		const userToken = localStorage.getItem('userToken')
 		if (userToken) {
-			navigate(-1)
+			navigate('/videos')
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [])
-
-	// Will do later
-	const handleGuestLogin = e => {
-		console.log(e)
-	}
+	}, [userToken])
 
 	return (
 		<>
@@ -141,11 +135,6 @@ export const LoginScreen = () => {
 						Register
 					</Link>
 				</p>
-				<button
-					className='btn-handle-guest'
-					onClick={handleGuestLogin}>
-					Use Guest Credentials
-				</button>
 			</form>
 		</>
 	)

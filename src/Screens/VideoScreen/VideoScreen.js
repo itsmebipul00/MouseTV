@@ -48,11 +48,11 @@ export const VideoScreen = () => {
 
 	const { watchLater, toggleWatchLater } = useWatchLater()
 
-	const likedVideo = likes.find(likedV => likedV._id === id)
+	const likedVideo = likes?.find(likedV => likedV._id === id)
 		? true
 		: false
 
-	const isWatchLater = watchLater.find(whatchL => whatchL._id === id)
+	const isWatchLater = watchLater?.find(whatchL => whatchL._id === id)
 		? true
 		: false
 

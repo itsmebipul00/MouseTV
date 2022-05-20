@@ -13,9 +13,8 @@ export const WatchLaterScreen = () => {
 
 	return (
 		<div className='videos-listed'>
-			{watchLater &&
-				watchLater.length > 0 &&
-				watchLater.map(video => (
+			{watchLater?.length > 0 &&
+				watchLater?.map(video => (
 					<Video
 						_id={video._id}
 						poster={video.poster}

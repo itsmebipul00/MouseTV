@@ -4,16 +4,15 @@ import {
 	UiwLogout,
 	RiUser3Fill,
 } from '../../assets/logos'
-import { isEmptyObject } from '../../utils/isEmptyObject'
+import { getUserToken } from '../../utils/getUserToken'
 import { useUser } from '../../ActionProviders/AuthActions'
 import { Link } from 'react-router-dom'
 import './Header.css'
 
 export const Header = () => {
-	const { userInfo, logoutUser } = useUser()
+	const { logoutUser } = useUser()
 
-	const isUserObjEmpty = isEmptyObject(userInfo)
-
+	const token = getUserToken()
 	return (
 		<header className='header d-flex'>
 			<div className='d-flex'>
@@ -48,7 +47,7 @@ export const Header = () => {
 					/>
 				</div>
 
-				{isUserObjEmpty ? (
+				{!token ? (
 					<>
 						<Link to='/login' className='login-link'>
 							<UiwLogout

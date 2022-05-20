@@ -8,15 +8,19 @@ import { useReducer } from 'react'
 
 import axios from 'axios'
 
+import { useUser } from './AuthActions'
+
 const WatchLaterProvider = props => {
 	const [{ watchLater, error: errorWatchLater }, dispatch] =
 		useReducer(watchLaterReducer, {
 			watchLater: [],
 		})
 
+	const { userInfo } = useUser()
+
 	const config = {
 		headers: {
-			authorization: localStorage.getItem('userToken'),
+			authorization: userInfo?.encodedToken,
 		},
 	}
 
@@ -44,7 +48,7 @@ const WatchLaterProvider = props => {
 
 	const toggleWatchLater = async video => {
 		const inWatchLater =
-			watchLater.findIndex(x => x._id === video._id) === -1
+			watchLater?.findIndex(x => x._id === video._id) === -1
 				? false
 				: true
 

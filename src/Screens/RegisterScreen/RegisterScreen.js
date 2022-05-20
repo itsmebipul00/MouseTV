@@ -56,8 +56,7 @@ export const RegisterScreen = () => {
 						})
 						const dataLogin = await resLogin.data
 						localStorage.setItem('userToken', dataLogin.encodedToken)
-						setTimeout(() => setUserAction(dataLogin), 1000)
-						navigate('/videos')
+						setUserAction(dataLogin)
 					} catch (error) {
 						setUserError(error.message)
 					}
@@ -81,14 +80,14 @@ export const RegisterScreen = () => {
 			}
 		})
 	}
+	const userToken = localStorage.getItem('userToken')
 
 	useEffect(() => {
-		const userToken = localStorage.getItem('userToken')
 		if (userToken) {
-			navigate(-1)
+			navigate('/videos')
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [])
+	}, [userToken])
 
 	return (
 		<>

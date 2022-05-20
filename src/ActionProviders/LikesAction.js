@@ -8,6 +8,8 @@ import { useReducer } from 'react'
 
 import axios from 'axios'
 
+import { useUser } from './AuthActions'
+
 const LikesProvider = props => {
 	const [{ likes, error: errorLikes }, dispatch] = useReducer(
 		likesReducer,
@@ -16,14 +18,15 @@ const LikesProvider = props => {
 		}
 	)
 
+	const { userInfo } = useUser()
+
 	const config = {
 		headers: {
-			authorization: localStorage.getItem('userToken'),
+			authorization: userInfo?.encodedToken,
 		},
 	}
 
 	const toogleLikesVideos = async video => {
-		console.log(video)
 		const unlikeAction = data => {
 			dispatch({
 				type: 'REMOVE_FROM_LIKES',
@@ -45,9 +48,7 @@ const LikesProvider = props => {
 			})
 
 		const likedVideo =
-			likes.findIndex(x => x._id === video._id) === -1 ? false : true
-
-		console.log(likedVideo)
+			likes?.findIndex(x => x._id === video._id) === -1 ? false : true
 
 		if (likedVideo) {
 			try {
@@ -64,8 +65,6 @@ const LikesProvider = props => {
 			}
 		} else {
 			try {
-				console.log('yaha', video)
-
 				const res = await axios.post(
 					'/api/user/likes',
 					{
@@ -78,7 +77,6 @@ const LikesProvider = props => {
 
 				addToLikes(data)
 			} catch (error) {
-				console.log(error)
 				errorMessage(error.message)
 			}
 		}
