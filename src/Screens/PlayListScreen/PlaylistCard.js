@@ -23,7 +23,7 @@ export const Playlist = () => {
 
 	const { likes, toogleLikesVideos } = useLikes()
 
-	const playListTobeShown = playList.find(pL => pL._id === id)
+	const playListTobeShown = playList?.find(pL => pL?._id === id)
 
 	const { videos } = playListTobeShown
 
@@ -50,24 +50,21 @@ export const Playlist = () => {
 			<div className='videos-listed playlist-videos'>
 				{id &&
 					playListTobeShown &&
-					videos &&
-					videos.length > 0 &&
-					videos.map(video => (
-						<>
-							<Video
-								_id={video._id}
-								poster={video.poster}
-								title={video.title}
-								video={video}
-								duration={video.duration}
-								key={video.id}
-								toogleLikesVideos={toogleLikesVideos}
-								likes={likes}
-								toggleWatchLater={toggleWatchLater}
-								watchLater={watchLater}
-								playListTobeShown={playListTobeShown}
-							/>
-						</>
+					videos?.length > 0 &&
+					videos?.map(video => (
+						<Video
+							_id={video._id}
+							poster={video.poster}
+							title={video.title}
+							video={video}
+							duration={video.duration}
+							key={video.id}
+							toogleLikesVideos={toogleLikesVideos}
+							likes={likes}
+							toggleWatchLater={toggleWatchLater}
+							watchLater={watchLater}
+							playListTobeShown={playListTobeShown}
+						/>
 					))}
 			</div>
 		</div>

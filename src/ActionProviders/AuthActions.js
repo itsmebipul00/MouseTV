@@ -17,7 +17,6 @@ const UserProvider = props => {
 	}
 
 	const setUserAction = user => {
-		console.log(user)
 		dispatch({
 			type: 'USER_AUTH_SUCCESS',
 			payload: user,
