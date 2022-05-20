@@ -27,11 +27,11 @@ FEATURES (P0 is complete as of now)
 -Responsive
 
 *-Videos added to WatchLater turns the watchlater icon blue
--
+
 *-You could select a text to choose a playlist
--
+
 *-Playlist managment works fine
--
+
 more features coming soon
 
 made with ❤️
