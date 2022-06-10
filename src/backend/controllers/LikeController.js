@@ -44,13 +44,9 @@ export const getLikedVideosHandler = function (schema, request) {
  * */
 
 export const addItemToLikedVideos = function (schema, request) {
-	console.log(request)
 	const user = requiresAuth.call(this, request)
-	console.log(user)
 	if (user) {
-		console.log('yaha')
 		const { video } = JSON.parse(request.requestBody)
-		console.log(video)
 		if (user.likes.some(item => item.id === video.id)) {
 			return new Response(
 				409,

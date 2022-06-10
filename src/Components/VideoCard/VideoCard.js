@@ -1,7 +1,7 @@
 import './VideoCard.css'
 import { VideoCTAs } from '../VideoCTAs/VideoCTAs'
 
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 import { RiDeleteBin7Fill } from '../../assets/logos'
 
@@ -27,13 +27,13 @@ export const VideoCard = props => {
 
 	const { addToHistory } = useHistroy()
 
-	// console.log(addtoHistory)
-
-	const likedVideo = likes.find(likedV => likedV._id === _id)
+	const likedVideo = likes?.find(likedV => likedV._id === _id)
 		? true
 		: false
 
-	const isWatchLater = watchLater.find(whatchL => whatchL._id === _id)
+	const isWatchLater = watchLater?.find(
+		whatchL => whatchL._id === _id
+	)
 		? true
 		: false
 
@@ -58,7 +58,11 @@ export const VideoCard = props => {
 			<button
 				onClick={() => handlePathtoVideo(video)}
 				className='video-link'>
-				<img src={poster} alt={`${title}`} className='video-poster' />
+				<img
+					src={window.location.origin + '/' + poster}
+					alt={`${title}`}
+					className='video-poster'
+				/>
 			</button>
 			<div className='video-info'>
 				<VideoCTAs

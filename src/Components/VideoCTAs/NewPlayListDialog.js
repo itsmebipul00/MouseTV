@@ -3,9 +3,7 @@ export const NewPlaylistDialog = props => {
 		props
 
 	return (
-		<form
-			className='new-Playlist'
-			onSubmit={e => playListHandler(e, video)}>
+		<div className='new-Playlist'>
 			<p className='new-playlist-title'>New Playlist</p>
 			<label htmlFor='playlist' className='sr-only'>
 				{' '}
@@ -20,7 +18,11 @@ export const NewPlaylistDialog = props => {
 				value={newPlaylist}
 				onChange={e => setNewPlaylist(e.target.value)}
 			/>
-			<button className='btn-create-playlist'>Create and Save</button>
-		</form>
+			<button
+				onClick={e => playListHandler(e, video)}
+				className='btn-create-playlist'>
+				Create and Save
+			</button>
+		</div>
 	)
 }

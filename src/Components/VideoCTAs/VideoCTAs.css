@@ -27,8 +27,9 @@
 }
 
 .new-Playlist {
-	min-height: 0;
-	display: block;
+	min-height: 20vh;
+	display: flex;
+	flex-direction: column;
 	height: fit-content;
 	gap: 1rem;
 }

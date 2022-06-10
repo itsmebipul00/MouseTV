@@ -3,10 +3,14 @@ import { useContext, useReducer } from 'react'
 import { PlayListContext } from '../contextCreator'
 import { playListReducer } from '../reducers/playListReducer.js'
 
+import { useUser } from './AuthActions'
+
 const PlayListProvider = props => {
+	const { userInfo } = useUser()
+
 	const config = {
 		headers: {
-			authorization: localStorage.getItem('userToken'),
+			authorization: userInfo?.encodedToken,
 		},
 	}
 
@@ -49,7 +53,6 @@ const PlayListProvider = props => {
 				postVideoToPlaylist(response.data.playlist)
 			} catch (error) {
 				playListError(error.message)
-				console.log(error.message)
 			}
 		} catch (error) {
 			playListError(error.message)
@@ -84,7 +87,6 @@ const PlayListProvider = props => {
 				payload: data,
 			})
 		} catch (error) {
-			console.log(error)
 			playListError(error.message)
 		}
 	}

@@ -3,8 +3,6 @@
  * You can add videos of your wish with different attributes
  * */
 
-// console.log(uuid())
-
 export const videos = [
 	{
 		_id: '01c1cd11-bc69-46cf-828a-88839954f1ce',
