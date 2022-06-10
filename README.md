@@ -1,37 +1,41 @@
-USERINFO
-email: itsmebipul00@gmail.com
-passwword: itsmebipul00@gmail.com
+## USERINFO
 
-FEATURES (P0 is complete as of now)
--HomePage with categories filters
--Filters on listing page, custom scrollbar with useRef
--Videos Listing, Likes, watchlater, playlist, history on login
--Playlist managment, on video listing screen, custom dialogs
+email: itsmebipul00@gmail.com</br>
+passwword: itsmebipul00@gmail.com</br>
 
----Protected Routes in an Outlet---
--Toggle Likes, Wachlater, create or addtoplaylist --in all screens
--Clear History, remove video from history
--Playlist managment, deletes playlist if no video
--Playlist items in an Outlet
--Delete playlist items
+## FEATURES (P0 is complete as of now)
 
--Auto login on Signup
--Normal Login
--SignUp
--Single Icon for login/logout
+-HomePage with categories filters</br>
+-Filters  on listing page, custom scrollbar with useRef</br>
+-Videos Listing, Likes, watchlater, playlist, history on login</br>
+-Playlist managment, on video listing screen, custom dialogs</br>
 
--Loaders and error components
--Single Video
--Filters with Categories
 
--Responsive
+---Protected Routes in an Outlet---</br>
+-Toggle Likes, Wachlater, create or addtoplaylist --in all screens</br>
+-Clear History, remove video from history</br>
+-Playlist managment, deletes playlist if no video</br>
+-Playlist items in an Outlet</br>
+-Delete playlist items</br>
 
-*-Videos added to WatchLater turns the watchlater icon blue
+-Auto login on Signup</br>
+-Normal Login</br>
+-Hide/Show Password</br>
+-Single Icon for login/logout</br>
 
-*-You could select a text to choose a playlist
+-Loaders and error components</br>
+-Single Video</br>
+-Filters with Categories</br>
 
-*-Playlist managment works fine
+-Responsive </br>
 
-more features coming soon
+## more features coming soon
 
+
+<br>
+
+<div align="center">
 made with ❤️
+</div>
+
+<br>
