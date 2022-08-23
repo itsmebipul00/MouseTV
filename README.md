@@ -3,7 +3,7 @@
 email: itsmebipul00@gmail.com</br>
 passwword: itsmebipul00@gmail.com</br>
 
-## FEATURES (P0 is complete as of now)
+
 
 -HomePage with categories filters</br>
 -Filters  on listing page, custom scrollbar with useRef</br>
@@ -29,7 +29,7 @@ passwword: itsmebipul00@gmail.com</br>
 
 -Responsive </br>
 
-## more features coming soon
+
 
 
 <br>
